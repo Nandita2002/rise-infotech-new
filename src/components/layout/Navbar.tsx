@@ -9,6 +9,7 @@ import TopBar from '@/components/layout/Topbar'
 import MobileMenu from '@/components/layout/MobileMenu'
 import { cn } from '@/lib/utils'
 
+
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)

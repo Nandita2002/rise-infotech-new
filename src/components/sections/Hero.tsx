@@ -200,10 +200,14 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Subtle background blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] bg-blue-50/60 rounded-full translate-x-1/3 -translate-y-1/4" />
-        <div className="absolute bottom-0 left-0 w-[300px] lg:w-[400px] h-[300px] lg:h-[400px] bg-slate-50 rounded-full -translate-x-1/2 translate-y-1/2" />
-      </div>
+    {/* Background Decorations */}
+<div className="pointer-events-none absolute inset-0 overflow-hidden">
+  {/* Top-right blue glow */}
+  <div className="absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full bg-blue-50 blur-3xl opacity-80" />
+
+  {/* Center soft glow behind illustration */}
+  <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/30 blur-3xl" />
+</div>
 
       <Container className="relative">
         <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-12 pt-10 pb-4 lg:pt-14 lg:pb-0">
@@ -370,31 +374,38 @@ export default function Hero() {
         </div>
       </Container>
 
-      {/* ── Partners strip ─────────────────────────────────── */}
-      <motion.div
-        variants={fadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="mt-6 lg:mt-10 bg-slate-50 border-t border-b border-slate-100 py-4 lg:py-5"
-      >
-        <Container>
-          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-12">
-            <span className="text-slate-400 text-xs sm:text-sm font-medium w-full sm:w-auto text-center">
-              Our Training Aligns with
+  {/* ── SAP Technologies ─────────────────────────────────── */}
+<motion.div
+  variants={fadeIn}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="mt-8 border-y border-slate-100 bg-slate-50 py-6"
+>
+  <Container>
+    <div className="text-center">
+      <p className="mb-6 text-sm font-semibold uppercase tracking-wider text-slate-500">
+        Our Training Aligns With
+      </p>
+
+      <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+        {sapPartners.map((partner) => (
+          <div
+            key={partner.name}
+            className="rounded-xl border border-slate-200 bg-white px-5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg"
+          >
+            <span
+              className="text-sm font-bold md:text-base"
+              style={{ color: partner.color }}
+            >
+              {partner.logo}
             </span>
-            {sapPartners.map((partner) => (
-              <span
-                key={partner.name}
-                className="text-sm sm:text-base font-extrabold tracking-tight"
-                style={{ color: partner.color }}
-              >
-                {partner.logo}
-              </span>
-            ))}
           </div>
-        </Container>
-      </motion.div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</motion.div>
     </section>
   )
 }

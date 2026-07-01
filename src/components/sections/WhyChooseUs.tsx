@@ -1,6 +1,25 @@
 'use client'
 
 import Container from '@/components/ui/Container'
+import FeatureCard from '@/components/ui/FeatureCard'
+import {
+  Award,
+ 
+  Briefcase,
+  Building2,
+ 
+  GraduationCap,
+  Laptop,
+
+  Users,
+    Target,
+  Eye,
+} from 'lucide-react'
+
+
+
+import SectionHeading from '@/components/ui/SectionHeading'
+
 
 const features = [
   { icon: '🎯', title: 'Industry-Focused Curriculum', desc: 'Curriculum aligned with real SAP project requirements.' },
@@ -13,24 +32,61 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="py-20 bg-slate-50">
-      <Container>
-        <div className="text-center mb-14">
-          <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-2">Why Rise Infotech</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-            What Makes Us Different
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((f) => (
-            <div key={f.title} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-              <span className="text-3xl mb-4 block">{f.icon}</span>
-              <h3 className="font-bold text-slate-800 mb-2">{f.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
+    
+      <section className="py-20 lg:py-28">
+        <Container>
+          <SectionHeading
+            badge="Why Choose Us"
+            title="Why Thousands Choose Rise Infotech"
+            description="We combine practical industry knowledge with personalized mentoring to help learners become confident professionals."
+          />
+
+          <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+            <FeatureCard
+              icon={GraduationCap}
+              title="Industry Expert Trainers"
+              description="Learn from certified SAP consultants and experienced professionals with real implementation expertise."
+              color="blue"
+            />
+
+            <FeatureCard
+              icon={Laptop}
+              title="Hands-on Live Projects"
+              description="Gain practical exposure by working on industry-oriented assignments and real-time business scenarios."
+              color="green"
+            />
+
+            <FeatureCard
+              icon={Briefcase}
+              title="Placement Assistance"
+              description="Resume building, mock interviews and career guidance to help you secure the right opportunity."
+              color="orange"
+            />
+
+            <FeatureCard
+              icon={Building2}
+              title="Corporate Training"
+              description="Customized SAP and Analytics training solutions designed specifically for organizations."
+              color="purple"
+            />
+
+            <FeatureCard
+              icon={Award}
+              title="Certification Guidance"
+              description="Complete guidance for SAP certification preparation with expert mentoring and practice sessions."
+              color="blue"
+            />
+
+            <FeatureCard
+              icon={Users}
+              title="Internship Programs"
+              description="Industry internships and project-based learning to gain practical experience before entering the workforce."
+              color="green"
+            />
+
+          </div>
+        </Container>
+      </section>
   )
 }
