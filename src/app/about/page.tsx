@@ -30,6 +30,7 @@ import SectionHeading from '@/components/ui/SectionHeading'
 import Stats from '@/components/ui/Stats'
 import Timeline from '@/components/ui/Timeline'
 import Testimonials from '@/components/sections/Testimonials'
+import Instructor from '@/components/sections/Instructor'
 
 export default function AboutPage() {
   const aboutStats = [
@@ -353,99 +354,7 @@ export default function AboutPage() {
       {/* Part 3 Starts Here */}
             {/* ================= FOUNDER MESSAGE ================= */}
 
-      <section className="bg-slate-50 py-20 lg:py-28">
-        <Container>
-          <div className="grid items-center gap-14 lg:grid-cols-2">
-
-            {/* Left */}
-
-            <div className="relative">
-
-              <div className="overflow-hidden rounded-[32px] bg-gradient-to-br from-blue-600 to-blue-700 p-10 shadow-2xl">
-
-                {/* Replace with founder image later */}
-
-                <div className="mx-auto flex h-72 w-72 items-center justify-center rounded-full border-8 border-white/20 bg-white/10">
-
-                  <span className="text-7xl font-bold text-white">
-                    KB
-                  </span>
-
-                </div>
-
-                <div className="mt-8 text-center">
-
-                  <h3 className="text-3xl font-bold text-white">
-                    Mr. Kumaresh Bidari
-                  </h3>
-
-                  <p className="mt-2 text-blue-100">
-                    Founder & CEO
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Right */}
-
-            <div>
-
-              <SectionHeading
-                badge="Founder Message"
-                title="A Vision to Build Industry-Ready Professionals"
-                align="left"
-              />
-
-              <blockquote className="mt-6 border-l-4 border-blue-600 pl-6 text-lg italic leading-9 text-slate-600">
-                "At Rise Infotech, our mission has always been to bridge the
-                gap between academics and industry by providing practical,
-                career-oriented education that empowers learners with real
-                skills, confidence, and opportunities."
-              </blockquote>
-
-              <p className="mt-8 leading-8 text-slate-600">
-                We believe learning should go beyond theory. Every student
-                deserves access to experienced mentors, real-world projects,
-                certification guidance and placement support that prepares
-                them for today's competitive job market.
-              </p>
-
-              <p className="mt-6 leading-8 text-slate-600">
-                Our commitment is to create an ecosystem where students,
-                graduates and professionals continuously grow, innovate and
-                succeed in their careers.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-
-                <div className="rounded-xl border border-slate-200 bg-white px-5 py-3 shadow-sm">
-                  <p className="font-semibold text-slate-900">
-                    15+ Years
-                  </p>
-                  <span className="text-sm text-slate-500">
-                    Industry Experience
-                  </span>
-                </div>
-
-                <div className="rounded-xl border border-slate-200 bg-white px-5 py-3 shadow-sm">
-                  <p className="font-semibold text-slate-900">
-                    5000+
-                  </p>
-                  <span className="text-sm text-slate-500">
-                    Students Mentored
-                  </span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-        </Container>
-      </section>
+   <Instructor />
 
       {/* ================= TESTIMONIALS ================= */}
 

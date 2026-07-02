@@ -41,7 +41,7 @@ export default function Contact() {
           </div>
           <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone Number"
             className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
-          <select name="course" value={form.course} onChange={handleChange}
+          <select name="course" value={form.course} onChange={handleChange} title="Select a Course"
             className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full bg-white">
             <option value="">Select a Course</option>
             {['SAP MM', 'SAP SD', 'SAP FICO', 'SAP PP', 'SAP HCM', 'SAP S/4HANA', 'SAP Fiori', 'SAP SuccessFactors'].map((c) => (

@@ -1,13 +1,10 @@
-import Navbar from '@/components/layout/Navbar'
+
 import Hero from '@/components/sections/Hero'
 import Courses from '@/components/sections/Courses'
 import WhyChooseUs from '@/components/sections/WhyChooseUs'
-import Instructor from '@/components/sections/Instructor'
 import Testimonials from '@/components/sections/Testimonials'
 import FAQ from '@/components/sections/FAQ'
 import Contact from '@/components/sections/Contact'
-
-import Timeline from '@/components/ui/Timeline'
 
 export default function Home() {
   return (
