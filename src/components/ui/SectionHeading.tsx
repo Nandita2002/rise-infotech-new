@@ -21,10 +21,7 @@ export default function SectionHeading({
       <div
         className={`
           
-          bg-gradient-to-r
-          from-sky-100
-          via-blue-500
-          to-blue-700
+          bg-blue-500
           px-8
           py-8
           shadow-lg

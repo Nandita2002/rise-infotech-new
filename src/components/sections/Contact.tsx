@@ -25,13 +25,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-white text-black">
-      <Container className="max-w-2xl">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-600">Book a Free Consultation</h2>
-          <p className="text-black mt-3 text-base">
+       <div className="text-center mb-10 bg-blue-500 px-8 py-8">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Book a Free Consultation</h2>
+          <p className="text-blue-100 mt-3 text-base">
             Talk to our SAP career counsellor and find the right course for you.
           </p>
         </div>
+      <Container className="max-w-2xl">
+       
         <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 space-y-4 text-black">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input name="name" value={form.name} onChange={handleChange} required placeholder="Your Name"

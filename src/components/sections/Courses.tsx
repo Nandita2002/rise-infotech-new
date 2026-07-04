@@ -128,7 +128,7 @@ function ProgramCard({ program, index }: { program: Program; index: number }) {
 export default function Courses() {
   return (
     <section id="courses" className="bg-white py-16 lg:py-24">
-<div className="mb-10  bg-[linear-gradient(90deg,#86b7ff_38%,#5b92f7_58%,#3f73eb_75%,#2857d8_90%,#1a46c5_100%)] px-8 py-10 text-center shadow-xl lg:px-16">
+<div className="mb-10 bg-blue-500 px-8 py-10 text-center shadow-xl lg:px-16">
 
   <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-6 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
     WHAT WE OFFER

@@ -93,7 +93,7 @@ export default function Testimonials() {
 
   return (
     <section className="bg-white py-16 overflow-hidden">
-     <div className="mb-16  bg-gradient-to-r from-sky-100 via-blue-500 to-blue-700 px-8 py-8 text-center">
+     <div className="mb-16  bg-blue-500WHAT WE OFFER px-8 py-8 text-center">
 
   <h2 className="text-[clamp(24px,4vw,38px)] font-bold leading-tight text-white">
     Trusted by <span className="text-blue-100">1000+ students</span>
