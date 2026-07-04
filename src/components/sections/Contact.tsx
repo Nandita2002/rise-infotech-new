@@ -24,32 +24,32 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-blue-600">
+    <section id="contact" className="py-20 bg-white text-black">
       <Container className="max-w-2xl">
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Book a Free Consultation</h2>
-          <p className="text-blue-100 mt-3 text-base">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-600">Book a Free Consultation</h2>
+          <p className="text-black mt-3 text-base">
             Talk to our SAP career counsellor and find the right course for you.
           </p>
         </div>
-        <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-2xl space-y-4">
+        <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 space-y-4 text-black">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input name="name" value={form.name} onChange={handleChange} required placeholder="Your Name"
-              className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
+              className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
             <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="Email Address"
-              className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
+              className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
           </div>
           <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone Number"
-            className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
+            className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
           <select name="course" value={form.course} onChange={handleChange} title="Select a Course"
-            className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full bg-white">
+            className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full bg-white">
             <option value="">Select a Course</option>
-            {['SAP MM', 'SAP SD', 'SAP FICO', 'SAP PP', 'SAP HCM', 'SAP S/4HANA', 'SAP Fiori', 'SAP SuccessFactors'].map((c) => (
+            {['SAP MM', 'SAP SD', 'SAP FICO', 'Other'].map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
           <textarea name="message" value={form.message} onChange={handleChange} rows={3} placeholder="Any specific questions or goals?"
-            className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full resize-none" />
+            className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full resize-none" />
           <button type="submit"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition-colors text-sm">
             📅 Book Free Consultation

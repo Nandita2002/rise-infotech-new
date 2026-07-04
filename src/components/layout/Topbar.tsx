@@ -12,9 +12,9 @@ const socialIcons: Record<string, React.ElementType> = {
 
 export default function TopBar() {
   return (
-    <div className="hidden md:block bg-slate-900 text-slate-300">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-9 text-xs">
+    <div className="hidden md:block bg-blue-700 text-white">
+      <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-9 text-s">
           {/* Left: phone + email */}
           <div className="flex items-center gap-5">
             <a
@@ -54,7 +54,7 @@ export default function TopBar() {
             </div>
             <a
               href="/contact"
-              className="border border-slate-600 hover:border-blue-400 hover:text-blue-400 text-slate-300 rounded-md px-3 py-1 text-[11px] font-medium transition-colors"
+              className="border border-white hover:border-blue-400 hover:text-blue-400 text-white rounded-md px-3 py-1 text-[11px] font-medium transition-colors"
             >
               Enquiry
             </a>

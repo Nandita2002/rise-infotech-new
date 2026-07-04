@@ -1,106 +1,123 @@
 'use client'
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Clock, Users, Settings, Code2, BrainCircuit, FlaskConical, BookOpen } from 'lucide-react'
+import {
+  ArrowRight,
+  CheckCircle2,
+  Database,
+  BrainCircuit,
+  FlaskConical,
+} from 'lucide-react'
 import Container from '@/components/ui/Container'
-import { courses as allCourses, type Course } from '@/data/courses'
-import { workshops, type Workshop } from '@/data/workshop'
 
-type Tab = 'functional' | 'technical' | 'datascience' | 'workshops'
-type CardItem = (Course & { href: string }) | (Workshop & { href: string })
-
-const grouped: Record<Tab, CardItem[]> = {
-  functional: allCourses.filter((c) => c.category === 'functional').map((c) => ({ ...c, href: `/courses/${c.slug}` })),
-  technical: allCourses.filter((c) => c.category === 'technical').map((c) => ({ ...c, href: `/courses/${c.slug}` })),
-  datascience: allCourses.filter((c) => c.category === 'datascience').map((c) => ({ ...c, href: `/courses/${c.slug}` })),
-  workshops: workshops.map((w) => ({ ...w, href: `/workshops/${w.slug}` })),
+// ── Program data ─────────────────────────────────────────────
+type Program = {
+  id: string
+  icon: React.ElementType
+  title: string
+  description: string
+  highlights: string[]
+  ctaLabel: string
+  href: string
 }
 
-// ── Tab config ───────────────────────────────────────────────
-const tabs: { key: Tab; label: string; icon: React.ElementType; count: number }[] = [
-  { key: 'functional', label: 'SAP Functional', icon: Settings, count: grouped.functional.length },
-  { key: 'technical', label: 'SAP Technical', icon: Code2, count: grouped.technical.length },
-  { key: 'datascience', label: 'Data Science', icon: BrainCircuit, count: grouped.datascience.length },
-  { key: 'workshops', label: 'Workshops', icon: FlaskConical, count: grouped.workshops.length },
+const programs: Program[] = [
+  {
+    id: 'sap',
+    icon: Database,
+    title: 'SAP ERP Courses',
+    description:
+      'Master industry-leading SAP ERP modules through instructor-led training, real-time implementation projects, certification guidance and placement support.',
+    highlights: [
+      '19+ SAP Modules',
+      'Live Instructor-Led Classes',
+      'Real-Time Projects',
+      'Placement Assistance',
+    ],
+    ctaLabel: 'Explore SAP Courses',
+    href: '/sap-courses',
+  },
+  {
+    id: 'datascience',
+    icon: BrainCircuit,
+    title: 'AI & Data Science',
+    description:
+      'Build future-ready skills in Artificial Intelligence, Machine Learning, Data Science, Python and Business Analytics through practical learning.',
+    highlights: [
+      'Artificial Intelligence',
+      'Machine Learning',
+      'Python Programming',
+      'Business Analytics',
+    ],
+    ctaLabel: 'Explore AI Courses',
+    href: '/ai-data-science',
+  },
+  {
+    id: 'workshops',
+    icon: FlaskConical,
+    title: 'Workshops & Bootcamps',
+    description:
+      'Participate in career-focused workshops, bootcamps, hackathons and industry sessions designed to improve practical skills and employability.',
+    highlights: [
+      'Weekend Workshops',
+      'Career Bootcamps',
+      'Resume Building',
+      'Interview Preparation',
+    ],
+    ctaLabel: 'Explore Workshops',
+    href: '/workshops&bootcamps',
+  },
 ]
 
-// ── Level badge ──────────────────────────────────────────────
-const levelColor: Record<string, string> = {
-  Beginner: 'bg-green-50 text-green-700',
-  Intermediate: 'bg-blue-50 text-blue-700',
-  Advanced: 'bg-purple-50 text-purple-700',
-}
+// ── Program card ─────────────────────────────────────────────
+function ProgramCard({ program, index }: { program: Program; index: number }) {
+  const Icon = program.icon
 
-const badgeColor: Record<string, string> = {
-  'Most Popular': 'bg-blue-600 text-white',
-  'High Demand': 'bg-amber-500 text-white',
-  'New': 'bg-green-500 text-white',
-  'Weekend Batch': 'bg-purple-600 text-white',
-  'High Success Rate': 'bg-teal-600 text-white',
-  'Free': 'bg-rose-500 text-white',
-}
-
-// ── Course card ──────────────────────────────────────────────
-function CourseCard({ item }: { item: CardItem }) {
-  const Icon = item.icon
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 8 }}
-      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -8 }}
+      className="group relative flex h-full min-h-[460px] flex-col rounded-[24px] border border-slate-200 bg-white p-8 shadow-[0_2px_10px_rgba(15,23,42,0.04)] transition-shadow duration-300 hover:border-blue-500 hover:shadow-[0_20px_40px_rgba(37,99,235,0.14)]"
     >
-      {item.badge && (
-        <span className={`absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full ${badgeColor[item.badge] ?? 'bg-slate-100 text-slate-600'}`}>
-          {item.badge}
-        </span>
-      )}
-
-      <div className="p-5 flex-1">
-        <div className="flex items-start gap-3 mb-3">
-          <div className={`${item.iconBg} rounded-xl p-2.5 flex-shrink-0`}>
-            <Icon size={20} className={item.iconColor} />
-          </div>
-          <div>
-            <h3 className="font-bold text-slate-800 text-[15px] leading-tight group-hover:text-blue-600 transition-colors">
-              {item.title}
-            </h3>
-            <p className="text-slate-400 text-[12px] mt-0.5 leading-tight">{item.subtitle}</p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 flex-wrap mt-4">
-          <span className="inline-flex items-center gap-1 text-[11px] text-slate-500">
-            <Clock size={11} /> {item.duration}
-          </span>
-          <span className="text-slate-200">•</span>
-          <span className="inline-flex items-center gap-1 text-[11px] text-slate-500">
-            <Users size={11} /> {item.students}
-          </span>
-          <span className="text-slate-200">•</span>
-          <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${levelColor[item.level]}`}>
-            {item.level}
-          </span>
+      {/* Icon block — top ~35-40% */}
+      <div className="mb-6 flex h-36 items-center justify-center rounded-2xl bg-blue-50 transition-colors duration-300 group-hover:bg-blue-600/[0.06]">
+        <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-600 shadow-lg shadow-blue-200 transition-transform duration-300 group-hover:scale-105">
+          <Icon size={36} className="text-white" strokeWidth={1.75} />
         </div>
       </div>
 
-      <div className="px-5 py-3 border-t border-slate-50 flex items-center justify-between">
+      {/* Heading */}
+      <h3 className="mb-3 text-xl font-extrabold text-slate-900">
+        {program.title}
+      </h3>
+
+      {/* Description */}
+      <p className="mb-6 text-sm leading-relaxed text-slate-500">
+        {program.description}
+      </p>
+
+      {/* Highlights */}
+      <ul className="mb-8 space-y-2.5">
+        {program.highlights.map((point) => (
+          <li key={point} className="flex items-center gap-2.5 text-sm text-slate-700">
+            <CheckCircle2 size={17} className="flex-shrink-0 text-blue-600" strokeWidth={2} />
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA — pinned to bottom */}
+      <div className="mt-auto pt-2">
         <Link
-          href={item.href}
-          className="text-[12px] font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group/link"
+          href={program.href}
+          className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition-colors group-hover:text-blue-700"
         >
-          View Details
-          <ArrowRight size={12} className="transition-transform group-hover/link:translate-x-0.5" />
-        </Link>
-        <Link
-          href="/contact"
-          className="text-[11px] font-semibold bg-blue-50 hover:bg-blue-600 text-blue-600 hover:text-white px-3 py-1 rounded-lg transition-colors"
-        >
-          Enroll Now
+          {program.ctaLabel}
+          <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
     </motion.div>
@@ -109,82 +126,30 @@ function CourseCard({ item }: { item: CardItem }) {
 
 // ── Main Section ─────────────────────────────────────────────
 export default function Courses() {
-  const [activeTab, setActiveTab] = useState<Tab>('functional')
-
   return (
-    <section id="courses" className="py-16 lg:py-24 bg-slate-50">
+    <section id="courses" className="bg-white py-16 lg:py-24">
+<div className="mb-10  bg-[linear-gradient(90deg,#86b7ff_38%,#5b92f7_58%,#3f73eb_75%,#2857d8_90%,#1a46c5_100%)] px-8 py-10 text-center shadow-xl lg:px-16">
+
+  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-6 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
+    WHAT WE OFFER
+  </span>
+
+  <h2 className="mt-6 text-4xl font-extrabold text-white lg:text-5xl">
+    Explore Our Learning Programs
+  </h2>
+
+  <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-blue-50">
+    Choose from industry-focused training programs designed to help students
+    and professionals build successful careers.
+  </p>
+
+</div>
       <Container>
-        <div className="text-center mb-10">
-          <span className="inline-block text-blue-600 text-xs font-bold uppercase tracking-widest mb-3 bg-blue-50 px-4 py-1.5 rounded-full">
-            What We Offer
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
-            Explore Our Courses
-          </h2>
-          <p className="text-slate-500 text-base max-w-xl mx-auto">
-            Industry-aligned SAP, Data Science, and professional development programmes
-            taught by certified consultants with real-world experience.
-          </p>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {tabs.map((tab) => {
-            const TabIcon = tab.icon
-            const isActive = activeTab === tab.key
-            return (
-              <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
-                  isActive
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-200'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:text-blue-600'
-                }`}
-              >
-                <TabIcon size={15} />
-                {tab.label}
-                <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                  {tab.count}
-                </span>
-              </button>
-            )
-          })}
-        </div>
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.25 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
-          >
-            {grouped[activeTab].map((item) => (
-              <CourseCard key={item.id} item={item} />
-            ))}
-          </motion.div>
-        </AnimatePresence>
-
-        <div className="mt-12 text-center">
-          <p className="text-slate-500 text-sm mb-4">
-            Can't find what you're looking for? We offer custom corporate batches too.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/courses"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-colors shadow-sm"
-            >
-              <BookOpen size={15} />
-              View All Courses
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 border-2 border-blue-200 hover:border-blue-400 text-blue-600 font-semibold text-sm px-6 py-3 rounded-xl transition-all bg-white hover:bg-blue-50"
-            >
-              Talk to a Counsellor
-            </Link>
-          </div>
+      
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {programs.map((program, index) => (
+            <ProgramCard key={program.id} program={program} index={index} />
+          ))}
         </div>
       </Container>
     </section>

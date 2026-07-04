@@ -18,11 +18,24 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="py-20 bg-white">
+          <div className="mb-16  bg-blue-500 px-8 py-14 text-center shadow-lg">
+
+  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
+    GOT QUESTIONS?
+  </span>
+
+  <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+    Frequently Asked Questions
+  </h2>
+
+  <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-blue-50 sm:text-lg">
+    Find answers to the most commonly asked questions about our SAP courses,
+    training methodology, certifications, placements, and enrollment process.
+  </p>
+
+</div>
       <Container className="max-w-3xl">
-        <div className="text-center mb-14">
-          <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-2">Got Questions?</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">Frequently Asked Questions</h2>
-        </div>
+
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <div key={i} className="border border-slate-100 rounded-2xl overflow-hidden">

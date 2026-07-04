@@ -1,16 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-
 interface SectionHeadingProps {
   badge?: string
   title: string
   description?: string
   align?: 'left' | 'center'
-  buttonText?: string
-  buttonHref?: string
 }
 
 export default function SectionHeading({
@@ -18,52 +12,47 @@ export default function SectionHeading({
   title,
   description,
   align = 'center',
-  buttonText,
-  buttonHref,
 }: SectionHeadingProps) {
-  const isCenter = align === 'center'
+  const isLeft = align === 'left'
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className={`mb-14 ${
-        isCenter ? 'mx-auto text-center' : 'text-left'
-      }`}
-    >
-      {badge && (
-        <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">
-          {badge}
-        </span>
-      )}
+    <div className={`mb-16 ${isLeft ? '' : 'w-full'}`}>
 
-      <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-        {title}
-      </h2>
+      <div
+        className={`
+          
+          bg-gradient-to-r
+          from-sky-100
+          via-blue-500
+          to-blue-700
+          px-8
+          py-8
+          shadow-lg
+          lg:px-16
+          ${isLeft ? 'text-left' : 'text-center'}
+        `}
+      >
+        {badge && (
+          <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
+            {badge}
+          </span>
+        )}
 
-      {description && (
-        <p
-          className={`mt-5 text-base leading-8 text-slate-600 sm:text-lg ${
-            isCenter ? 'mx-auto max-w-3xl' : 'max-w-3xl'
-          }`}
-        >
-          {description}
-        </p>
-      )}
+        <h2 className="mt-6 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+          {title}
+        </h2>
 
-      {buttonText && buttonHref && (
-        <div className="mt-8">
-          <Link
-            href={buttonHref}
-            className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg"
+        {description && (
+          <p
+            className={`mt-6 text-lg leading-8 text-blue-50 ${
+              isLeft ? 'max-w-2xl' : 'mx-auto max-w-3xl'
+            }`}
           >
-            {buttonText}
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-      )}
-    </motion.div>
+            {description}
+          </p>
+        )}
+      </div>
+
+    </div>
   )
 }

@@ -34,12 +34,14 @@ export default function WhyChooseUs() {
   return (
     
       <section className="py-20 lg:py-28">
+
+        <SectionHeading
+  badge="Why Choose Us"
+  title="Why Thousands Choose Rise Infotech"
+  description="We combine practical industry knowledge with personalized mentoring to help learners become confident professionals."
+/>
         <Container>
-          <SectionHeading
-            badge="Why Choose Us"
-            title="Why Thousands Choose Rise Infotech"
-            description="We combine practical industry knowledge with personalized mentoring to help learners become confident professionals."
-          />
+         
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 

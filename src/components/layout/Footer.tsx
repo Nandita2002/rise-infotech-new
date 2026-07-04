@@ -16,121 +16,234 @@ import Container from '@/components/ui/Container'
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-800 text-slate-300">
+    <footer className="border-t border-slate-200 bg-white">
+
+      {/* Top Blue Line */}
+
+      <div className="h-1 w-full bg-gradient-to-r from-grey-700 via-grey-500 to-grey-700" />
+
       <Container>
 
-        {/* Main Footer */}
+        <div className="grid gap-12 py-16 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
 
-        <div className="grid gap-12 py-14 lg:grid-cols-4">
-
-          {/* Company */}
+          {/* ================= COMPANY ================= */}
 
           <div>
+
             <Image
               src="/Rise_infotech.jpg"
               alt="Rise Infotech"
-              width={185}
-              height={85}
+              width={190}
+              height={70}
               className="h-auto"
             />
 
-            <p className="mt-5 text-sm leading-7 text-slate-400">
+            <p className="mt-6 max-w-sm leading-7 text-slate-600">
               Empowering students and professionals with
-              industry-focused SAP ERP, Data Science,
-              Corporate Training and Placement Assistance.
+              industry-focused SAP ERP, Artificial Intelligence,
+              Data Science, Corporate Training and Placement
+              Assistance through practical learning.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+
+              <span className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-700">
+                SAP ERP
+              </span>
+
+              <span className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-700">
+                AI & Data Science
+              </span>
+
+              <span className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-700">
+                Workshops
+              </span>
+
+            </div>
+
           </div>
 
-          {/* Quick Links */}
+          {/* ================= QUICK LINKS ================= */}
 
           <div>
-            <h3 className="mb-5 text-lg font-semibold text-white">
+
+            <h3 className="mb-6 text-lg font-bold text-slate-900">
               Quick Links
             </h3>
 
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-4 text-sm">
 
               <li>
-                <Link href="/" className="hover:text-blue-400">
+                <Link
+                  href="/"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
                   Home
                 </Link>
               </li>
 
               <li>
-                <Link href="/about" className="hover:text-blue-400">
+                <Link
+                  href="/about"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link href="/courses" className="hover:text-blue-400">
+                <Link
+                  href="/courses"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
                   Courses
                 </Link>
               </li>
 
               <li>
-                <Link href="/contact" className="hover:text-blue-400">
+                <Link
+                  href="/corporate-training"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
+                  Corporate Training
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
                   Contact
                 </Link>
               </li>
 
             </ul>
+
           </div>
 
-          {/* Popular Courses */}
+          {/* ================= POPULAR COURSES ================= */}
 
           <div>
-            <h3 className="mb-5 text-lg font-semibold text-white">
+
+            <h3 className="mb-6 text-lg font-bold text-slate-900">
               Popular Courses
             </h3>
 
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-4 text-sm">
 
-              <li>SAP MM</li>
-              <li>SAP SD</li>
-              <li>SAP FICO</li>
-              <li>SAP ABAP</li>
-              <li>Data Science</li>
+              <li>
+                <Link
+                  href="/courses"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
+                  SAP MM
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/courses"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
+                  SAP SD
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/courses"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
+                  SAP FICO
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/courses"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
+                  SAP ABAP
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/courses"
+                  className="text-slate-600 transition hover:text-blue-600"
+                >
+                  AI & Data Science
+                </Link>
+              </li>
 
             </ul>
+
           </div>
 
-          {/* Contact */}
+          {/* ================= CONTACT ================= */}
 
           <div>
 
-            <h3 className="mb-5 text-lg font-semibold text-white">
-              Contact
+            <h3 className="mb-6 text-lg font-bold text-slate-900">
+              Contact Us
             </h3>
 
-            <div className="space-y-4 text-sm">
+            <div className="space-y-5 text-sm text-slate-600">
 
-              <p className="flex gap-3">
-                <Phone size={18} className="mt-0.5 text-blue-400" />
-                +91 91104 55125
-              </p>
+              <div className="flex items-start gap-3">
 
-              <p className="flex gap-3">
-                <Mail size={18} className="mt-0.5 text-blue-400" />
-                info@riseinfotech.in
-              </p>
+                <Phone
+                  size={18}
+                  className="mt-1 text-blue-600"
+                />
 
-              <p className="flex gap-3">
-                <MapPin size={18} className="mt-0.5 text-blue-400" />
-                Vijayanagar, Bengaluru
-              </p>
+                <span>
+                  +91 91104 55125
+                </span>
+
+              </div>
+
+              <div className="flex items-start gap-3">
+
+                <Mail
+                  size={18}
+                  className="mt-1 text-blue-600"
+                />
+
+                <span>
+                  info@riseinfotech.in
+                </span>
+
+              </div>
+
+              <div className="flex items-start gap-3">
+
+                <MapPin
+                  size={18}
+                  className="mt-1 text-blue-600"
+                />
+
+                <span>
+                  Vijayanagar,
+                  <br />
+                  Bengaluru,
+                  Karnataka
+                </span>
+
+              </div>
 
             </div>
 
             {/* Social Icons */}
-
-            <div className="mt-6 flex gap-4">
+                        <div className="mt-8 flex gap-3">
 
               <a
                 href="https://www.linkedin.com/company/rise-infotech/"
                 target="_blank"
-                className="rounded-full bg-slate-800 p-2 hover:bg-blue-600"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
               >
                 <Linkedin size={18} />
               </a>
@@ -138,8 +251,9 @@ export default function Footer() {
               <a
                 href="https://www.instagram.com/rise_infotech/"
                 target="_blank"
-                className="rounded-full bg-slate-800 p-2 hover:bg-pink-600"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
               >
                 <Instagram size={18} />
               </a>
@@ -147,8 +261,9 @@ export default function Footer() {
               <a
                 href="https://www.facebook.com/people/Rise-Infotech/100089059015353/"
                 target="_blank"
-                className="rounded-full bg-slate-800 p-2 hover:bg-blue-700"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
               >
                 <Facebook size={18} />
               </a>
@@ -156,8 +271,9 @@ export default function Footer() {
               <a
                 href="https://www.youtube.com/@rise_infotech"
                 target="_blank"
-                className="rounded-full bg-slate-800 p-2 hover:bg-red-600"
                 rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
               >
                 <Youtube size={18} />
               </a>
@@ -168,29 +284,47 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom */}
+        {/* Bottom Footer */}
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-800 py-6 text-sm text-slate-500 md:flex-row">
+        <div className="border-t border-slate-200 py-6">
 
-          <p>
-            © {new Date().getFullYear()} Rise Infotech. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
 
-          <div className="flex gap-6">
+            <p className="text-sm text-slate-500">
+              © {new Date().getFullYear()} Rise Infotech. All rights reserved.
+            </p>
 
-            <Link href="/privacy-policy" className="hover:text-white">
-              Privacy Policy
-            </Link>
+            <div className="flex flex-wrap items-center gap-6 text-sm">
 
-            <Link href="/terms" className="hover:text-white">
-              Terms & Conditions
-            </Link>
+              <Link
+                href="/privacy-policy"
+                className="text-slate-500 transition hover:text-blue-600"
+              >
+                Privacy Policy
+              </Link>
+
+              <Link
+                href="/terms"
+                className="text-slate-500 transition hover:text-blue-600"
+              >
+                Terms & Conditions
+              </Link>
+
+              <Link
+                href="/contact"
+                className="text-slate-500 transition hover:text-blue-600"
+              >
+                Contact
+              </Link>
+
+            </div>
 
           </div>
 
         </div>
 
       </Container>
+
     </footer>
   )
 }
