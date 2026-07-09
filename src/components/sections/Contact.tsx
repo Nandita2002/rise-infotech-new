@@ -25,7 +25,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-white text-black">
-       <div className="text-center mb-10 bg-blue-500 px-8 py-8">
+       <div className="text-center mb-10 bg-[#123498] px-8 py-8">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Book a Free Consultation</h2>
           <p className="text-blue-100 mt-3 text-base">
             Talk to our SAP career counsellor and find the right course for you.
@@ -44,15 +44,32 @@ export default function Contact() {
             className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
           <select name="course" value={form.course} onChange={handleChange} title="Select a Course"
             className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full bg-white">
-            <option value="">Select a Course</option>
-            {['SAP MM', 'SAP SD', 'SAP FICO', 'Other'].map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
+                               <option value="">Select Course</option>
+
+<optgroup label="SAP ERP Courses">
+  <option>SAP MM</option>
+  <option>SAP SD</option>
+  <option>SAP FICO</option>
+  <option>SAP ABAP</option>
+  <option>SAP BASIS</option>
+  <option>Other</option> 
+</optgroup>
+
+<optgroup label="AI & Data Science">
+  <option>AI Powered Data Analytics</option>
+  <option>Azure Data Engineering</option>
+  <option>Other</option> 
+</optgroup>
+
+<optgroup label="General Inquiry">
+  
+  <option>General Inquiry</option>
+</optgroup>
           </select>
           <textarea name="message" value={form.message} onChange={handleChange} rows={3} placeholder="Any specific questions or goals?"
             className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full resize-none" />
           <button type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition-colors text-sm">
+            className="w-full bg-[#123498] hover:bg-[#0F2E88] text-white font-bold py-3.5 rounded-xl transition-colors text-sm">
             📅 Book Free Consultation
           </button>
         </form>

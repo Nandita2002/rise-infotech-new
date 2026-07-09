@@ -33,18 +33,26 @@ const features = [
 export default function WhyChooseUs() {
   return (
     
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28 bg-[#F9FAFB] ">
+<div className="mb-16 overflow-hidden  bg-[#123498] px-8 py-12 text-center shadow-xl">
 
-        <SectionHeading
-  badge="Why Choose Us"
-  title="Why Thousands Choose Rise Infotech"
-  description="We combine practical industry knowledge with personalized mentoring to help learners become confident professionals."
-/>
+  <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
+    WHY CHOOSE US
+  </span>
+
+  <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+    Why Thousands Choose Rise Infotech
+  </h2>
+
+  <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-blue-100">
+    We combine practical industry knowledge with personalized mentoring to help
+    learners become confident professionals.
+  </p>
+
+</div>
+      
         <Container>
-         
-
           <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
             <FeatureCard
               icon={GraduationCap}
               title="Industry Expert Trainers"

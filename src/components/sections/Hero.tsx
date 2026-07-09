@@ -188,13 +188,32 @@ function NetworkBackground() {
 
 // ── Partner logos ────────────────────────────────────────────
 const sapPartners = [
-  { name: 'SAP',              logo: 'SAP',              color: '#007DB8' },
-  { name: 'SAP S/4HANA',     logo: 'SAP S/4 HANA',     color: '#007DB8' },
-  { name: 'SAP Fiori',       logo: 'SAP Fiori',        color: '#007DB8' },
-  { name: 'SAP SuccessFactors', logo: 'SAP SuccessFactors', color: '#007DB8' },
-  { name: 'SAP Ariba',       logo: 'SAP Ariba',        color: '#F0AB00' },
+  {
+    name: "SAP",
+    logo: "SAP",
+    color: "#123498",
+  },
+  {
+    name: "S/4HANA",
+    logo: "S/4HANA",
+    color: "#0F5CC0",
+  },
+  {
+    name: "BTP",
+    logo: "BTP",
+    color: "#0A4AA3",
+  },
+  {
+    name: "ABAP",
+    logo: "ABAP",
+    color: "#1D4ED8",
+  },
+  {
+    name: "Success",
+    logo: "Industry Ready",
+    color: "#1E3A8A",
+  },
 ]
-
 // ── Main Hero ────────────────────────────────────────────────
 export default function Hero() {
   return (
@@ -256,20 +275,20 @@ export default function Hero() {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6"
             >
               <Link
-                href="/courses"
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors shadow-md hover:shadow-blue-200 hover:shadow-lg"
-              >
-                <BookOpen size={15} />
-                Explore Courses
-                <ArrowRight size={14} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 border-2 border-blue-200 hover:border-blue-400 text-blue-600 font-semibold text-sm px-5 py-3 rounded-xl transition-all bg-white hover:bg-blue-50"
-              >
-                <Calendar size={14} />
-                Book a Consultation
-              </Link>
+  href="/courses"
+  className="inline-flex items-center gap-2 bg-[#123498] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#0F2E88] hover:shadow-lg hover:shadow-[#123498]/30"
+>
+  <BookOpen size={15} />
+  Explore Courses
+  <ArrowRight size={14} />
+</Link>
+           <Link
+  href="/contact"
+  className="inline-flex items-center gap-2 border-2 border-[#123498] px-5 py-3 text-sm font-semibold text-[#123498] transition-all duration-300 hover:border-[#0F2E88] hover:text-[#0F2E88]"
+>
+  <Calendar size={14} />
+  Book a Consultation
+</Link>
             </motion.div>
 
             {/* Feature checkmarks */}

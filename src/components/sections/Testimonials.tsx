@@ -93,28 +93,33 @@ export default function Testimonials() {
 
   return (
     <section className="bg-white py-16 overflow-hidden">
-     <div className="mb-16  bg-blue-500WHAT WE OFFER px-8 py-8 text-center">
+<div className="mb-16 overflow-hidden bg-[#123498] px-8 py-10 text-center shadow-xl">
 
   <h2 className="text-[clamp(24px,4vw,38px)] font-bold leading-tight text-white">
-    Trusted by <span className="text-blue-100">1000+ students</span>
+    Trusted by <span className="text-blue-100">1000+ Students</span>
   </h2>
 
-  <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2 backdrop-blur-sm">
+  <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-sm">
+
     <Image
-      src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+      src="/google.png
+      "
       alt="Google"
-      width={16}
-      height={16}
+      width={20}
+      height={20}
     />
-    <span className="text-sm tracking-wide text-yellow-300">
+
+    <span className="text-lg text-yellow-300">
       ★★★★★
     </span>
-    <span className="text-sm font-medium text-white">
-      4.9 / 5 Google Rating
+
+    <span className="font-semibold text-white">
+      5 / 5 Google Rating
     </span>
+
   </div>
 
-  <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-blue-50">
+  <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-blue-100">
     Real reviews from professionals who successfully transitioned into SAP careers.
   </p>
 
@@ -183,29 +188,35 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className="mt-10 text-center px-5">
-        <a
-          href="https://www.google.com/search?sca_esv=81978db0d0913d93&rlz=1C1YTUH_enIN1060IN1060&sxsrf=ANbL-n7os2l-0uk3ejOKgDSBaJQIjKdvw:1776073334264&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZxCFEPkTRWInxxXkfUhG9fyS5WBE_VsfODKz4VXXcICT4ibXqZKceNQWCESWxiBtd8xv-VD0nYopIM2aKHc74-qEyty&q=Rise+Infotech+Reviews&sa=X&ved=2ahUKEwjXhLzhxOqTAxUKU2wGHRMnBvQQ0bkNegQINxAH&biw=1536&bih=730&dpr=1.25"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-700 to-blue-500 hover:from-blue-800 hover:to-blue-600 text-white px-7 py-3 rounded-xl text-sm font-medium transition-all hover:-translate-y-0.5 shadow-[0_10px_24px_rgba(37,99,235,0.2)]"
-        >
-          View more reviews
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M3 8h10M9 4l4 4-4 4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
+      <div className="mt-10 px-5 text-center">
+  <a
+    href="https://www.google.com/search?sca_esv=81978db0d0913d93&rlz=1C1YTUH_enIN1060IN1060&sxsrf=ANbL-n7os2l-0uk3ejOKgDSBaJQIjKdvw:1776073334264&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZxCFEPkTRWInxxXkfUhG9fyS5WBE_VsfODKz4VXXcICT4ibXqZKceNQWCESWxiBtd8xv-VD0nYopIM2aKHc74-qEyty&q=Rise+Infotech+Reviews&sa=X&ved=2ahUKEwjXhLzhxOqTAxUKU2wGHRMnBvQQ0bkNegQINxAH&biw=1536&bih=730&dpr=1.25"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 bg-[#123498] px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#0F2E88] hover:shadow-lg hover:shadow-[#123498]/30"
+  >
+    View More Reviews
 
-        <p className="text-xs text-gray-400 mt-2">
-          See what our students are saying
-        </p>
-      </div>
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 16 16"
+      fill="none"
+    >
+      <path
+        d="M3 8h10M9 4l4 4-4 4"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </a>
+
+  <p className="mt-3 text-sm text-slate-500">
+    See what our students are saying on Google Reviews
+  </p>
+</div>
 
     </section>
   );

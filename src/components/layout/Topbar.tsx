@@ -12,8 +12,8 @@ const socialIcons: Record<string, React.ElementType> = {
 
 export default function TopBar() {
   return (
-    <div className="hidden md:block bg-blue-700 text-white">
-      <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
+    <div className="hidden md:block bg-[#123498] text-white">
+      <div className="mx-auto max-w-7xl px-8 sm:px-6 lg:px-10 py-1">
         <div className="flex items-center justify-between h-9 text-s">
           {/* Left: phone + email */}
           <div className="flex items-center gap-5">

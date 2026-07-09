@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, Calendar } from 'lucide-react'
 import Logo from '@/components/navbar/Logo'
-import NavMenu from '@/components/navbar/NavMenu'
 import TopBar from '@/components/layout/Topbar'
 import MobileMenu from '@/components/layout/MobileMenu'
 import { cn } from '@/lib/utils'
@@ -38,27 +37,73 @@ export default function Navbar() {
             <Logo />
 
             {/* Desktop nav */}
-            <NavMenu />
+           <nav className="hidden lg:flex items-center gap-8">
+
+  <Link
+    href="/"
+    className="text-sm font-medium text-slate-700 transition-colors hover:text-[#123498]"
+  >
+    Home
+  </Link>
+
+  <Link
+    href="/about"
+    className="text-sm font-medium text-slate-700 transition-colors hover:text-[#123498]"
+  >
+    About
+  </Link>
+
+  <Link
+    href="/sap-courses"
+    className="text-sm font-medium text-slate-700 transition-colors hover:text-[#123498]"
+  >
+    SAP ERP Courses
+  </Link>
+
+  <Link
+    href="/ai-data-science"
+    className="text-sm font-medium text-slate-700 transition-colors hover:text-[#123498]"
+  >
+    AI & Data Science
+  </Link>
+
+  <Link
+    href="/workshops&bootcamps"
+    className="text-sm font-medium text-slate-700 transition-colors hover:text-[#123498]"
+  >
+    Workshops
+  </Link>
+
+  <Link
+    href="/contact"
+    className="text-sm font-medium text-slate-700 transition-colors hover:text-[#123498]"
+  >
+    Contact
+  </Link>
+
+</nav>
 
             {/* CTA + hamburger */}
-            <div className="flex items-center gap-3">
-              <Link
-                href="/contact"
-                className="hidden lg:flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-colors duration-200 shadow-sm"
-              >
-                <Calendar size={15} />
-                Free Consultation
-              </Link>
+           <div className="flex items-center gap-3">
 
-              {/* Mobile hamburger */}
-              <button
-                onClick={() => setIsMobileOpen(true)}
-                className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-600"
-                aria-label="Open menu"
-              >
-                <Menu size={22} />
-              </button>
-            </div>
+  <Link
+    href="/contact"
+    className="hidden lg:inline-flex items-center gap-2 bg-[#123498] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#0F2E88] hover:shadow-lg hover:shadow-[#123498]/30"
+  >
+    <Calendar size={15} />
+    Free Consultation
+  </Link>
+
+  {/* Mobile hamburger */}
+  <button
+    onClick={() => setIsMobileOpen(true)}
+    className="p-2 text-slate-600 transition-colors hover:bg-slate-100 lg:hidden"
+    aria-label="Open menu"
+  >
+    <Menu size={22} />
+  </button>
+
+</div>
           </div>
         </div>
       </header>

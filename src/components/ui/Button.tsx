@@ -1,3 +1,4 @@
+
 import { ReactNode, ButtonHTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -14,11 +15,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-blue-200 hover:shadow-lg',
+    'bg-[#123498] text-white hover:bg-[#0F2E88] shadow-md hover:shadow-lg hover:shadow-[#123498]/30',
+
   outline:
-    'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 bg-white',
+    'border-2 border-[#123498] bg-white text-[#123498] hover:bg-[#EEF3FF]',
+
   ghost:
-    'text-blue-600 hover:bg-blue-50 bg-transparent',
+    'bg-transparent text-[#123498] hover:bg-[#EEF3FF]',
 }
 
 const sizeClasses: Record<Size, string> = {
@@ -39,7 +42,7 @@ export default function Button({
   return (
     <button
       className={cn(
-        'inline-flex items-center gap-2 rounded-lg font-semibold transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+        'inline-flex cursor-pointer items-center gap-2 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#123498] focus:ring-offset-2 active:scale-[0.98]',
         variantClasses[variant],
         sizeClasses[size],
         className,
@@ -47,7 +50,9 @@ export default function Button({
       {...props}
     >
       {icon && iconPosition === 'left' && <span>{icon}</span>}
+
       {children}
+
       {icon && iconPosition === 'right' && <span>{icon}</span>}
     </button>
   )

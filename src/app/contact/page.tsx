@@ -265,16 +265,29 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="rounded-xl border border-slate-200 px-5 py-3 outline-none focus:border-blue-600"
                     >
-                      <option>Select Course</option>
+                    <option value="">Select Course</option>
 
-                      <option>SAP MM</option>
-                      <option>SAP SD</option>
-                      <option>SAP FICO</option>
-                      <option>SAP PP</option>
-                      <option>SAP ABAP</option>
-                      <option>SAP BASIS</option>
-                      <option>Corporate Training</option>
-                      <option>Data Science</option>
+<optgroup label="SAP ERP Courses">
+  <option>SAP MM</option>
+  <option>SAP SD</option>
+  <option>SAP FICO</option>
+  <option>SAP ABAP</option>
+  <option>SAP BASIS</option>
+</optgroup>
+
+<optgroup label="AI & Data Science">
+  <option>AI Powered Data Analytics</option>
+  <option>Azure Data Engineering</option>
+</optgroup>
+
+<optgroup label="Other Programs">
+  <option>Workshops & Bootcamps</option>
+  <option>Corporate Training</option>
+</optgroup>
+
+<optgroup label="General Inquiry">
+  <option>General Inquiry</option>
+</optgroup>
 
                     </select>
 
@@ -289,12 +302,12 @@ export default function ContactPage() {
                     className="w-full rounded-xl border border-slate-200 px-5 py-4 outline-none focus:border-blue-600"
                   />
 
-                  <button
-                    className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
-                  >
-                    Book Free Consultation
-                    <Send size={18} />
-                  </button>
+               <button
+  className="inline-flex items-center gap-2 bg-[#123498] px-8 py-4 font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#0F2E88] hover:shadow-lg hover:shadow-[#123498]/30"
+>
+  Book Free Consultation
+  <Send size={18} />
+</button>
 
                 </form>
                               </div>

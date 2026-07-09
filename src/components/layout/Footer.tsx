@@ -3,19 +3,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  Phone,
-  Mail,
-  MapPin,
-  Linkedin,
-  Instagram,
-  Facebook,
-  Youtube,
-} from 'lucide-react'
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaPhoneAlt,
+  FaYoutube,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 import Container from '@/components/ui/Container'
 
 export default function Footer() {
   return (
+    
     <footer className="border-t border-slate-200 bg-white">
 
       {/* Top Blue Line */}
@@ -76,7 +77,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   Home
                 </Link>
@@ -85,7 +86,8 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]
+                  "
                 >
                   About Us
                 </Link>
@@ -94,7 +96,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   Courses
                 </Link>
@@ -103,7 +105,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/corporate-training"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   Corporate Training
                 </Link>
@@ -112,7 +114,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   Contact
                 </Link>
@@ -135,7 +137,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   SAP MM
                 </Link>
@@ -144,7 +146,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   SAP SD
                 </Link>
@@ -153,7 +155,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   SAP FICO
                 </Link>
@@ -162,7 +164,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   SAP ABAP
                 </Link>
@@ -171,7 +173,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-blue-600"
+                  className="text-slate-600 transition hover:text-[#123498]"
                 >
                   AI & Data Science
                 </Link>
@@ -185,146 +187,121 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="mb-6 text-lg font-bold text-slate-900">
-              Contact Us
-            </h3>
+        <div>
+          <h3 className="font-semibold mb-3 text-slate-900">Contact</h3>
 
-            <div className="space-y-5 text-sm text-slate-600">
+          <div className="flex items-center gap-2 text-slate-600 text-sm mb-2">
+            <FaPhoneAlt size={14} className="text-blue-600" />
+            <a href="tel:+919110455125" className="hover:text-slate-900 transition">+91-9110455125</a>
+          </div>
 
-              <div className="flex items-start gap-3">
-
-                <Phone
-                  size={18}
-                  className="mt-1 text-blue-600"
-                />
-
-                <span>
-                  +91 91104 55125
-                </span>
-
-              </div>
-
-              <div className="flex items-start gap-3">
-
-                <Mail
-                  size={18}
-                  className="mt-1 text-blue-600"
-                />
-
-                <span>
-                  info@riseinfotech.in
-                </span>
-
-              </div>
-
-              <div className="flex items-start gap-3">
-
-                <MapPin
-                  size={18}
-                  className="mt-1 text-blue-600"
-                />
-
-                <span>
-                  Vijayanagar,
-                  <br />
-                  Bengaluru,
-                  Karnataka
-                </span>
-
-              </div>
-
-            </div>
+          <div className="flex items-center gap-2 text-slate-600 text-sm">
+            <FaEnvelope size={14} className="text-blue-600" />
+            <a href="mailto:info@riseinfotech.in" className="hover:text-slate-900 transition">info@riseinfotech.in</a>
+          </div>
+        </div>
 
             {/* Social Icons */}
-                        <div className="mt-8 flex gap-3">
+          <div className="flex gap-2 mt-2">
+    
+    {/* Instagram */}
+    <a
+      href="https://www.instagram.com/rise_infotech/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 flex items-center justify-center rounded-md 
+      bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600"
+    >
+      <FaInstagram size={14} className="text-white" />
+    </a>
 
-              <a
-                href="https://www.linkedin.com/company/rise-infotech/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
-              >
-                <Linkedin size={18} />
-              </a>
+    {/* Facebook */}
+    <a
+      href="https://www.facebook.com/people/Rise-Infotech/100089059015353/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1877F2]"
+    >
+      <FaFacebookF size={14} className="text-white" />
+    </a>
 
-              <a
-                href="https://www.instagram.com/rise_infotech/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
-              >
-                <Instagram size={18} />
-              </a>
+    {/* X */}
+    <a
+      href="https://x.com/RiseInfotech"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 flex items-center justify-center rounded-md bg-black"
+    >
+      <FaXTwitter size={14} className="text-white" />
+    </a>
 
-              <a
-                href="https://www.facebook.com/people/Rise-Infotech/100089059015353/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
-              >
-                <Facebook size={18} />
-              </a>
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/company/rise-infotech/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 flex items-center justify-center rounded-md bg-[#0A66C2]"
+    >
+      <FaLinkedinIn size={14} className="text-white" />
+    </a>
 
-              <a
-                href="https://www.youtube.com/@rise_infotech"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
-              >
-                <Youtube size={18} />
-              </a>
+    {/* YouTube */}
+    <a
+      href="https://www.youtube.com/@rise_infotech"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 flex items-center justify-center rounded-md bg-[#FF0000]"
+    >
+      <FaYoutube size={14} className="text-white" />
+    </a>
 
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* Bottom Footer */}
-
-        <div className="border-t border-slate-200 py-6">
-
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-
-            <p className="text-sm text-slate-500">
-              © {new Date().getFullYear()} Rise Infotech. All rights reserved.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-6 text-sm">
-
-              <Link
-                href="/privacy-policy"
-                className="text-slate-500 transition hover:text-blue-600"
-              >
-                Privacy Policy
-              </Link>
-
-              <Link
-                href="/terms"
-                className="text-slate-500 transition hover:text-blue-600"
-              >
-                Terms & Conditions
-              </Link>
-
-              <Link
-                href="/contact"
-                className="text-slate-500 transition hover:text-blue-600"
-              >
-                Contact
-              </Link>
-
-            </div>
+  </div>
 
           </div>
 
         </div>
+
+      {/* Bottom Footer */}
+
+<div className=" py-6 ">
+
+  <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+
+    <p className="text-sm text-black/60">
+      © {new Date().getFullYear()} Rise Infotech. All rights reserved.
+    </p>
+
+    <div className="flex flex-wrap items-center gap-6 text-sm">
+
+      <Link
+        href="/privacy-policy"
+        className="text-black transition-colors duration-300 hover:text-blue-200"
+      >
+        Privacy Policy
+      </Link>
+
+      <Link
+        href="/terms"
+        className="text-black transition-colors duration-300 hover:text-blue-200"
+      >
+        Terms & Conditions
+      </Link>
+
+      <Link
+        href="/contact"
+        className="text-black transition-colors duration-300 hover:text-blue-200"
+      >
+        Contact
+      </Link>
+
+    </div>
+
+  </div>
+
+</div>
 
       </Container>
-
     </footer>
+    
   )
 }
