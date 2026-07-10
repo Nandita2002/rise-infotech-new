@@ -48,17 +48,17 @@ export default function Footer() {
 
             <div className="mt-6 flex flex-wrap gap-3">
 
-              <span className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-700">
-                SAP ERP
-              </span>
+             <span className="rounded-full bg-[#EAF5FD] px-4 py-2 text-xs font-semibold text-[#0769B4]">
+  SAP ERP
+</span>
 
-              <span className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-700">
-                AI & Data Science
-              </span>
+<span className="rounded-full bg-[#EAF5FD] px-4 py-2 text-xs font-semibold text-[#0769B4]">
+  AI & Data Science
+</span>
 
-              <span className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-700">
-                Workshops
-              </span>
+<span className="rounded-full bg-[#EAF5FD] px-4 py-2 text-xs font-semibold text-[#0769B4]">
+  Workshops
+</span>
 
             </div>
 
@@ -77,7 +77,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   Home
                 </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-slate-600 transition hover:text-[#123498]
+                  className="text-slate-600 transition hover:text-[#0769B4]
                   "
                 >
                   About Us
@@ -96,7 +96,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   Courses
                 </Link>
@@ -105,7 +105,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/corporate-training"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   Corporate Training
                 </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   Contact
                 </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   SAP MM
                 </Link>
@@ -146,7 +146,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   SAP SD
                 </Link>
@@ -155,7 +155,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   SAP FICO
                 </Link>
@@ -164,7 +164,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   SAP ABAP
                 </Link>
@@ -173,7 +173,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses"
-                  className="text-slate-600 transition hover:text-[#123498]"
+                  className="text-slate-600 transition hover:text-[#0769B4]"
                 >
                   AI & Data Science
                 </Link>

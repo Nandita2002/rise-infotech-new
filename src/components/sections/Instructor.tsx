@@ -8,7 +8,7 @@ import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function Instructor() {
   return (
-    <section className="bg-slate-50 py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-28">
       <Container>
         <div className="grid items-center gap-16 lg:grid-cols-2">
 
@@ -18,12 +18,12 @@ export default function Instructor() {
 
             {/* Background Card */}
 
-            <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 p-10 shadow-2xl">
+            <div className="relative overflow-hidden bg-[#0769B4] p-10 shadow-2xl">
 
               {/* Decorative Circles */}
 
               <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
-              <div className="absolute -bottom-16 -left-16 h-52 w-52 rounded-full bg-blue-400/20 blur-3xl" />
+              <div className="absolute -bottom-16 -left-16 h-52 w-52 rounded-full bg-[#4FA7E3]/20 blur-3xl" />
 
               {/* Founder Image */}
 
@@ -76,7 +76,7 @@ export default function Instructor() {
               align="left"
             />
 
-            <blockquote className="mt-6 border-l-4 border-blue-600 pl-6 text-lg italic leading-9 text-slate-600">
+            <blockquote className="mt-6 border-l-4 border-[#0769B4] pl-6 text-lg italic leading-9 text-slate-600">
               "At Rise Infotech, our vision has always been to bridge the gap
               between academic learning and industry expectations by providing
               practical education that transforms learners into confident
@@ -100,7 +100,7 @@ export default function Instructor() {
             <div className="mt-10 grid gap-5 sm:grid-cols-2">
 
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <h4 className="text-4xl font-extrabold text-blue-600">
+                <h4 className="text-4xl font-extrabold text-[#0769B4]">
                   15+
                 </h4>
 
@@ -114,7 +114,7 @@ export default function Instructor() {
               </div>
 
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <h4 className="text-4xl font-extrabold text-blue-600">
+                <h4 className="text-4xl font-extrabold text-[#0769B4]">
                   5000+
                 </h4>
 
@@ -151,7 +151,7 @@ export default function Instructor() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 transition-colors hover:bg-blue-600 hover:text-white"
+                    className="bg-[#EAF5FD] px-4 py-2 text-sm font-medium text-[#0769B4] transition-all duration-300 hover:bg-[#0769B4] hover:text-white"
                   >
                     {skill}
                   </span>
@@ -179,7 +179,7 @@ export default function Instructor() {
                 href="https://www.linkedin.com/in/kumaresh-bidari074/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-7 py-3.5 font-semibold text-slate-700 transition-all duration-300 hover:border-blue-600 hover:text-blue-600"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-7 py-3.5 font-semibold text-slate-700 transition-all duration-300 hover:border-blue-600 hover:text-[#0769B4]"
               >
                 <Linkedin size={18} />
                 LinkedIn

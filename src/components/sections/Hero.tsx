@@ -243,8 +243,8 @@ export default function Hero() {
               variants={fadeUp}
               className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-5"
             >
-              <Users size={13} className="text-blue-600" />
-              <span className="text-blue-700 text-xs font-semibold">
+              <Users size={13} className="text-[#0769B4]" />
+              <span className="text-[#0769B4] text-xs font-semibold">
                 Trusted by 5000+ SAP Learners
               </span>
             </motion.div>
@@ -255,7 +255,7 @@ export default function Hero() {
               className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-slate-900 leading-[1.08] tracking-tight mb-4"
             >
               Build Your{' '}
-              <span className="text-blue-600 block">SAP Career</span>
+              <span className="text-[#0769B4] block">SAP Career</span>
               with Industry Experts
             </motion.h1>
 
@@ -276,7 +276,7 @@ export default function Hero() {
             >
               <Link
   href="/courses"
-  className="inline-flex items-center gap-2 bg-[#123498] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#0F2E88] hover:shadow-lg hover:shadow-[#123498]/30"
+  className="inline-flex items-center gap-2 bg-[#0769B4] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#055A99] hover:shadow-lg hover:shadow-[#123498]/30"
 >
   <BookOpen size={15} />
   Explore Courses
@@ -284,7 +284,7 @@ export default function Hero() {
 </Link>
            <Link
   href="/contact"
-  className="inline-flex items-center gap-2 border-2 border-[#123498] px-5 py-3 text-sm font-semibold text-[#123498] transition-all duration-300 hover:border-[#0F2E88] hover:text-[#0F2E88]"
+  className="inline-flex items-center gap-2 border-2 border-[#0769B4] px-5 py-3 text-sm font-semibold text-[#0769B4] transition-all duration-300 hover:border-[#0F2E88] hover:text-[#0F2E88]"
 >
   <Calendar size={14} />
   Book a Consultation
@@ -401,29 +401,37 @@ export default function Hero() {
   viewport={{ once: true }}
   className="mt-8 border-y border-slate-100 bg-slate-50 py-6"
 >
-  <Container>
-    <div className="text-center">
-      <p className="mb-6 text-sm font-semibold uppercase tracking-wider text-slate-500">
-        Our Training Aligns With
-      </p>
+<Container>
+  <div className="text-center">
 
-      <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-        {sapPartners.map((partner) => (
-          <div
-            key={partner.name}
-            className="rounded-xl border border-slate-200 bg-white px-5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg"
+    <p className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-[#0769B4]">
+      OUR TRAINING ALIGNS WITH
+    </p>
+
+    <div className="flex flex-wrap justify-center gap-4">
+
+      {sapPartners.map((partner) => (
+
+        <div
+          key={partner.name}
+          className="border border-slate-200 bg-white px-6 py-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
+        >
+
+          <span
+            className="text-base font-bold tracking-wide"
+            style={{ color: partner.color }}
           >
-            <span
-              className="text-sm font-bold md:text-base"
-              style={{ color: partner.color }}
-            >
-              {partner.logo}
-            </span>
-          </div>
-        ))}
-      </div>
+            {partner.logo}
+          </span>
+
+        </div>
+
+      ))}
+
     </div>
-  </Container>
+
+  </div>
+</Container>
 </motion.div>
     </section>
   )

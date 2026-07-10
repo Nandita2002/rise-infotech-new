@@ -303,7 +303,7 @@ export default function ContactPage() {
                   />
 
                <button
-  className="inline-flex items-center gap-2 bg-[#123498] px-8 py-4 font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#0F2E88] hover:shadow-lg hover:shadow-[#123498]/30"
+  className="inline-flex items-center gap-2 bg-[#0769B4] px-8 py-4 font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#055A99] hover:shadow-lg hover:shadow-[#123498]/30"
 >
   Book Free Consultation
   <Send size={18} />

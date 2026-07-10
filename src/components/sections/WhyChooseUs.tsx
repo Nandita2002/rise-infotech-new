@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
   return (
     
       <section className="py-20 lg:py-28 bg-[#F9FAFB] ">
-<div className="mb-16 overflow-hidden  bg-[#123498] px-8 py-12 text-center shadow-xl">
+<div className="mb-16 overflow-hidden  bg-[#0769B4] px-8 py-12 text-center shadow-xl">
 
   <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
     WHY CHOOSE US

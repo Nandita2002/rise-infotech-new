@@ -93,7 +93,7 @@ export default function Testimonials() {
 
   return (
     <section className="bg-white py-16 overflow-hidden">
-<div className="mb-16 overflow-hidden bg-[#123498] px-8 py-10 text-center shadow-xl">
+<div className="mb-16 overflow-hidden bg-[#0769B4] px-8 py-10 text-center shadow-xl">
 
   <h2 className="text-[clamp(24px,4vw,38px)] font-bold leading-tight text-white">
     Trusted by <span className="text-blue-100">1000+ Students</span>
@@ -193,7 +193,7 @@ export default function Testimonials() {
     href="https://www.google.com/search?sca_esv=81978db0d0913d93&rlz=1C1YTUH_enIN1060IN1060&sxsrf=ANbL-n7os2l-0uk3ejOKgDSBaJQIjKdvw:1776073334264&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZxCFEPkTRWInxxXkfUhG9fyS5WBE_VsfODKz4VXXcICT4ibXqZKceNQWCESWxiBtd8xv-VD0nYopIM2aKHc74-qEyty&q=Rise+Infotech+Reviews&sa=X&ved=2ahUKEwjXhLzhxOqTAxUKU2wGHRMnBvQQ0bkNegQINxAH&biw=1536&bih=730&dpr=1.25"
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 bg-[#123498] px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#0F2E88] hover:shadow-lg hover:shadow-[#123498]/30"
+    className="inline-flex items-center gap-2 bg-[#0769B4] px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#055A99] hover:shadow-lg hover:shadow-[#123498]/30"
   >
     View More Reviews
 

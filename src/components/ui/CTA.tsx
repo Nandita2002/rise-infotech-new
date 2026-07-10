@@ -32,8 +32,7 @@ export default function CTA({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-8 py-16 text-white shadow-2xl lg:px-16"
-        >
+         className="relative overflow-hidden bg-[#0769B4] px-8 py-16 text-white shadow-2xl lg:px-16">
           {/* Background Glow */}
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute -bottom-24 -left-20 h-80 w-80 rounded-full bg-blue-300/20 blur-3xl" />
@@ -51,23 +50,27 @@ export default function CTA({
               {description}
             </p>
 
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href={primaryButtonHref}
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-semibold text-blue-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                {primaryButtonText}
-                <ArrowRight size={18} />
-              </Link>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-              <Link
-                href={secondaryButtonHref}
-                className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
-              >
-                <CalendarDays size={18} />
-                {secondaryButtonText}
-              </Link>
-            </div>
+  {/* Primary Button */}
+  <Link
+    href={primaryButtonHref}
+    className="inline-flex items-center gap-2 bg-white px-7 py-3.5 text-base font-semibold text-[#0769B4] shadow-lg transition-all duration-300 hover:bg-slate-100 hover:text-[#055A99]"
+  >
+    {primaryButtonText}
+    <ArrowRight size={18} />
+  </Link>
+
+  {/* Secondary Button */}
+  <Link
+    href={secondaryButtonHref}
+    className="inline-flex items-center gap-2 border-2 border-white px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#0769B4]"
+  >
+    <CalendarDays size={18} />
+    {secondaryButtonText}
+  </Link>
+
+</div>
           </div>
         </motion.div>
       </Container>

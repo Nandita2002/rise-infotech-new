@@ -142,28 +142,28 @@ export default function AboutPage() {
               <div className="mt-10 grid gap-5 sm:grid-cols-2">
 
                 <div className="flex items-center gap-3">
-                  <Laptop className="text-blue-600" />
+                  <Laptop className="text-#0769B4" />
                   <span className="font-medium">
                     Live Projects
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <BookOpen className="text-blue-600" />
+                  <BookOpen className="text-#0769B4" />
                   <span className="font-medium">
                     Industry Experts
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <ShieldCheck className="text-blue-600" />
+                  <ShieldCheck className="text-#0769B4" />
                   <span className="font-medium">
                     Certification Guidance
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Users className="text-blue-600" />
+                  <Users className="text-#0769B4" />
                   <span className="font-medium">
                     Placement Assistance
                   </span>
@@ -177,11 +177,11 @@ export default function AboutPage() {
 
             <div className="relative">
 
-              <div className="rounded-[32px] border border-slate-200 bg-gradient-to-br from-blue-50 to-white p-12 shadow-xl">
+              <div className="rounded-[32px] border border-slate-200 bg-gradient-to-br from-#0769B4-50 to-white p-12 shadow-xl">
 
                 <Building2
                   size={220}
-                  className="mx-auto text-blue-600"
+                  className="mx-auto text-#0769B4"
                 />
 
                 <div className="mt-10 space-y-5">
@@ -265,9 +265,9 @@ export default function AboutPage() {
               return (
                 <div
                   key={item.title}
-                  className="group rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-blue-100 hover:shadow-xl"
+                  className="group rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-#0769B4-100 hover:shadow-xl"
                 >
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-#0769B4-50 text-#0769B4 transition-all duration-300 group-hover:bg-#0769B4 group-hover:text-white">
                     <Icon size={30} />
                   </div>
 

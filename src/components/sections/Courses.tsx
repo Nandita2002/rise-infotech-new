@@ -95,7 +95,7 @@ function ProgramCard({
         ease: [0.22, 1, 0.36, 1],
       }}
       whileHover={{ y: -8 }}
-      className="group flex h-full min-h-[620px] flex-col border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#123498] hover:shadow-xl"
+      className="group flex h-full min-h-[620px] flex-col border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#0769B4] hover:shadow-xl"
     >
       {/* ================= IMAGE ================= */}
 
@@ -130,7 +130,7 @@ function ProgramCard({
 
           <Link
             href={program.href}
-            className="inline-flex items-center gap-2 font-semibold text-[#123498] transition-all duration-300 hover:gap-3"
+            className="inline-flex items-center gap-2 font-semibold text-[#0769B4] transition-all duration-300 hover:gap-3"
           >
             {program.ctaLabel}
 
@@ -153,7 +153,7 @@ export default function Courses() {
     >
       {/* ================= Heading ================= */}
 
-      <div className="mb-12 bg-[#123498] px-8 py-10 text-center shadow-xl lg:px-16">
+      <div className="mb-12 bg-[#0769B4] px-8 py-10 text-center shadow-xl lg:px-16">
 
         <span className="inline-flex items-center border border-white/30 bg-white/10 px-6 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
           WHAT WE OFFER
