@@ -1,6 +1,5 @@
 import {
   Award,
-  BarChart2,
   Settings,
   Database,
   ShoppingCart,
@@ -10,16 +9,10 @@ import {
   Factory,
   CheckSquare,
   Wrench,
-  FolderKanban,
-  UserCircle,
-  ShoppingBag,
-  HeartHandshake,
-  Layers,
   Code2,
-  Shield,
-  PieChart,
   Cloud,
   BrainCircuit,
+  PieChart,
 } from 'lucide-react'
 
 // ── Types ────────────────────────────────────────────────────
@@ -41,6 +34,7 @@ export interface Course {
   level: 'Beginner' | 'Intermediate' | 'Advanced'
   students: string
   badge?: string
+  price: number
   summary: string
   description: string
   highlights: string[]
@@ -51,6 +45,9 @@ export interface Course {
 }
 
 // ── Course data ──────────────────────────────────────────────
+// NOTE: SAP ERP catalog trimmed to the 10 approved courses:
+// MM, SD, FICO, PP, QM, PM, EWM, ABAP, BASIS, BTP.
+// Data Science courses are untouched (separate section, not part of this trim).
 export const courses: Course[] = [
   // ── Functional ──────────────────────────────────────────
   {
@@ -66,6 +63,7 @@ export const courses: Course[] = [
     level: 'Intermediate',
     students: '1200+',
     badge: 'Most Popular',
+    price: 22000,
     summary: 'Master procurement, inventory, and vendor management in SAP.',
     description:
       'SAP MM covers the procurement and materials lifecycle inside SAP, from purchase requisitions and vendor evaluation to goods receipt, invoice verification, and inventory valuation. You will work in a live SAP S/4HANA sandbox, configuring the module end to end while mapping every screen back to a real procure-to-pay process.',
@@ -99,6 +97,7 @@ export const courses: Course[] = [
     duration: '8 Weeks',
     level: 'Intermediate',
     students: '980+',
+    price: 22000,
     summary: 'Run the order-to-cash cycle from inquiry to billing.',
     description:
       'SAP SD trains you on the complete order-to-cash process: pricing, availability checks, delivery, billing, and credit management. The course builds a working sales organization structure and walks through real business scenarios drawn from distribution-heavy industries.',
@@ -133,6 +132,7 @@ export const courses: Course[] = [
     level: 'Intermediate',
     students: '1100+',
     badge: 'High Demand',
+    price: 26000,
     summary: 'Build financial and management accounting expertise in SAP.',
     description:
       'SAP FICO combines Financial Accounting and Controlling into one of the most in-demand SAP skill sets. You will configure the general ledger, accounts payable/receivable, asset accounting, and cost/profit-center accounting, then connect it all to New Asset Accounting and Universal Journal in S/4HANA.',
@@ -155,69 +155,6 @@ export const courses: Course[] = [
     ],
   },
   {
-    id: 'ewm',
-    slug: 'sap-ewm',
-    title: 'SAP EWM',
-    subtitle: 'Extended Warehouse Management',
-    category: 'functional',
-    icon: Truck,
-    iconBg: 'bg-purple-50',
-    iconColor: 'text-purple-600',
-    duration: '6 Weeks',
-    level: 'Advanced',
-    students: '450+',
-    summary: 'Design and run high-volume, automated warehouse operations.',
-    description:
-      'SAP EWM goes beyond standard inventory management to model complex warehouse layouts, automated storage systems, and labor management. The course focuses on the S/4HANA embedded EWM architecture used in modern distribution centers.',
-    highlights: [
-      'Model warehouse structure: storage types, sections & bins',
-      'Configure inbound, outbound, and internal warehouse processes',
-      'Set up wave management and resource/task management',
-      'Understand EWM integration with MM and TM',
-    ],
-    eligibility: 'SAP MM/WM consultants and supply chain professionals seeking specialization.',
-    tools: ['SAP S/4HANA Embedded EWM', 'SAP GUI'],
-    careerRoles: ['SAP EWM Consultant', 'Warehouse Systems Analyst'],
-    curriculum: [
-      { title: 'EWM Foundations', points: ['EWM vs classic WM', 'Warehouse structure setup', 'Storage bin & section configuration'] },
-      { title: 'Inbound Processing', points: ['ASN & goods receipt in EWM', 'Putaway strategies', 'Quality inspection integration'] },
-      { title: 'Outbound Processing', points: ['Outbound delivery order processing', 'Wave management', 'Picking strategies & packing'] },
-      { title: 'Resource & Labor Management', points: ['Task & resource management', 'Labor management basics', 'RF framework overview'] },
-      { title: 'Integration', points: ['EWM-MM and EWM-TM integration', 'Yard management basics', 'Reporting & monitoring'] },
-    ],
-  },
-  {
-    id: 'tm',
-    slug: 'sap-tm',
-    title: 'SAP TM',
-    subtitle: 'Transportation Management',
-    category: 'functional',
-    icon: Truck,
-    iconBg: 'bg-sky-50',
-    iconColor: 'text-sky-600',
-    duration: '6 Weeks',
-    level: 'Advanced',
-    students: '380+',
-    summary: 'Plan, optimize, and execute freight and transportation processes.',
-    description:
-      'SAP TM covers freight order management, carrier selection, and transportation planning for both inbound and outbound logistics. You will learn how transportation requirements flow from SD/MM documents into TM and back for freight settlement.',
-    highlights: [
-      'Configure freight units, orders, and bookings',
-      'Set up transportation planning and carrier selection',
-      'Manage freight settlement and charge calculation',
-      'Understand TM integration with SD, MM, and EWM',
-    ],
-    eligibility: 'Logistics professionals and SAP SD/MM consultants expanding into transportation.',
-    tools: ['SAP S/4HANA TM', 'SAP GUI'],
-    careerRoles: ['SAP TM Consultant', 'Logistics Systems Analyst'],
-    curriculum: [
-      { title: 'TM Fundamentals', points: ['Transportation network setup', 'Freight unit building rules', 'Organizational structure'] },
-      { title: 'Planning & Execution', points: ['Transportation proposals & freight orders', 'Carrier selection', 'Tendering process'] },
-      { title: 'Freight Settlement', points: ['Charge calculation', 'Freight settlement document', 'Integration with FI'] },
-      { title: 'Integration', points: ['TM-SD and TM-EWM integration', 'Delivery-based & order-based transportation', 'Reporting'] },
-    ],
-  },
-  {
     id: 'pp',
     slug: 'sap-pp',
     title: 'SAP PP',
@@ -229,6 +166,7 @@ export const courses: Course[] = [
     duration: '8 Weeks',
     level: 'Intermediate',
     students: '620+',
+    price: 22000,
     summary: 'Plan, schedule, and execute manufacturing processes in SAP.',
     description:
       'SAP PP covers demand management, MRP, and shop floor execution for discrete and process manufacturing. The course builds a complete production cycle from sales forecast to finished-goods confirmation.',
@@ -260,6 +198,7 @@ export const courses: Course[] = [
     duration: '6 Weeks',
     level: 'Intermediate',
     students: '340+',
+    price: 18000,
     summary: 'Implement quality inspection and control processes end to end.',
     description:
       'SAP QM covers quality planning, inspection processing, and quality notifications integrated with procurement and production. You will build inspection plans and master data used across incoming, in-process, and outgoing quality checks.',
@@ -291,6 +230,7 @@ export const courses: Course[] = [
     duration: '6 Weeks',
     level: 'Intermediate',
     students: '290+',
+    price: 18000,
     summary: 'Manage preventive and breakdown maintenance for plant equipment.',
     description:
       'SAP PM covers equipment and functional location master data, maintenance planning, and order execution. The course focuses on preventive maintenance strategies and breakdown maintenance processes used across asset-intensive industries.',
@@ -311,187 +251,36 @@ export const courses: Course[] = [
     ],
   },
   {
-    id: 'ps',
-    slug: 'sap-ps',
-    title: 'SAP PS',
-    subtitle: 'Project Systems',
+    id: 'ewm',
+    slug: 'sap-ewm',
+    title: 'SAP EWM',
+    subtitle: 'Extended Warehouse Management',
     category: 'functional',
-    icon: FolderKanban,
-    iconBg: 'bg-indigo-50',
-    iconColor: 'text-indigo-600',
-    duration: '6 Weeks',
-    level: 'Intermediate',
-    students: '260+',
-    summary: 'Plan, budget, and track projects using SAP Project Systems.',
-    description:
-      'SAP PS is used to manage complex, multi-phase projects with structured planning, budgeting, and cost tracking. The course covers work breakdown structures, networks, and project-related integration with FI and MM.',
-    highlights: [
-      'Build WBS and network structures',
-      'Plan costs, budgets, and revenues for projects',
-      'Track project execution and settlement',
-      'Understand PS integration with FI, CO, and MM',
-    ],
-    eligibility: 'Project managers, engineers, and finance professionals working with capital projects.',
-    tools: ['SAP S/4HANA', 'SAP GUI'],
-    careerRoles: ['SAP PS Consultant', 'Project Controls Analyst'],
-    curriculum: [
-      { title: 'Project Structures', points: ['Work breakdown structure (WBS)', 'Networks & activities', 'Milestones'] },
-      { title: 'Planning & Budgeting', points: ['Cost & revenue planning', 'Budget allocation & availability control', 'Resource planning'] },
-      { title: 'Execution & Settlement', points: ['Actual cost postings', 'Project settlement', 'Progress tracking'] },
-      { title: 'Integration & Reporting', points: ['PS-MM and PS-FI integration', 'Project reporting', 'Fiori PS apps'] },
-    ],
-  },
-  {
-    id: 'hcm',
-    slug: 'sap-hcm',
-    title: 'SAP HR / HCM',
-    subtitle: 'Human Capital Management',
-    category: 'functional',
-    icon: UserCircle,
-    iconBg: 'bg-pink-50',
-    iconColor: 'text-pink-600',
-    duration: '8 Weeks',
-    level: 'Intermediate',
-    students: '750+',
-    summary: 'Manage the full employee lifecycle in SAP HCM.',
-    description:
-      'SAP HCM covers organizational management, personnel administration, time management, and payroll basics. The course builds a working HR master data structure and walks through core HR processes used across industries.',
-    highlights: [
-      'Set up organizational management structures',
-      'Manage personnel administration and infotypes',
-      'Configure time management basics',
-      'Understand payroll fundamentals',
-    ],
-    eligibility: 'HR professionals and graduates interested in HR technology.',
-    tools: ['SAP HCM', 'SAP GUI'],
-    careerRoles: ['SAP HCM Consultant', 'HRIS Analyst'],
-    curriculum: [
-      { title: 'Organizational Management', points: ['Org structure, positions & jobs', 'Integration with PA', 'Reporting structures'] },
-      { title: 'Personnel Administration', points: ['Employee master data & infotypes', 'Actions & hiring process', 'Personnel structure'] },
-      { title: 'Time Management', points: ['Work schedules & time infotypes', 'Absence & attendance quotas', 'Time evaluation basics'] },
-      { title: 'Payroll Fundamentals', points: ['Payroll area & control record', 'Wage types', 'Payroll process overview'] },
-    ],
-  },
-  {
-    id: 'srm',
-    slug: 'sap-srm',
-    title: 'SAP SRM',
-    subtitle: 'Supplier Relationship Management',
-    category: 'functional',
-    icon: HeartHandshake,
-    iconBg: 'bg-violet-50',
-    iconColor: 'text-violet-600',
+    icon: Truck,
+    iconBg: 'bg-purple-50',
+    iconColor: 'text-purple-600',
     duration: '6 Weeks',
     level: 'Advanced',
-    students: '210+',
-    summary: 'Streamline sourcing and supplier collaboration processes.',
+    students: '450+',
+    price: 24000,
+    summary: 'Design and run high-volume, automated warehouse operations.',
     description:
-      'SAP SRM focuses on strategic sourcing, supplier collaboration, and self-service procurement. The course covers the shopping cart-to-PO cycle and integration back into the ERP procurement process.',
+      'SAP EWM goes beyond standard inventory management to model complex warehouse layouts, automated storage systems, and labor management. The course focuses on the S/4HANA embedded EWM architecture used in modern distribution centers.',
     highlights: [
-      'Configure self-service procurement workflows',
-      'Run sourcing and RFx processes',
-      'Manage supplier master and contracts',
-      'Understand SRM-MM integration',
+      'Model warehouse structure: storage types, sections & bins',
+      'Configure inbound, outbound, and internal warehouse processes',
+      'Set up wave management and resource/task management',
+      'Understand EWM integration with MM and TM',
     ],
-    eligibility: 'Procurement professionals and SAP MM consultants specializing further.',
-    tools: ['SAP SRM', 'SAP GUI'],
-    careerRoles: ['SAP SRM Consultant', 'Sourcing Systems Analyst'],
+    eligibility: 'SAP MM/WM consultants and supply chain professionals seeking specialization.',
+    tools: ['SAP S/4HANA Embedded EWM', 'SAP GUI'],
+    careerRoles: ['SAP EWM Consultant', 'Warehouse Systems Analyst'],
     curriculum: [
-      { title: 'SRM Foundations', points: ['SRM architecture & scenarios', 'Organizational structure', 'Master data'] },
-      { title: 'Self-Service Procurement', points: ['Shopping cart processing', 'Approval workflow', 'PO generation'] },
-      { title: 'Sourcing', points: ['RFx creation & bid evaluation', 'Contract management', 'Supplier collaboration'] },
-      { title: 'Integration', points: ['SRM-MM integration', 'Catalog management basics', 'Reporting'] },
-    ],
-  },
-  {
-    id: 'crm',
-    slug: 'sap-crm',
-    title: 'SAP CRM',
-    subtitle: 'Customer Relationship Management',
-    category: 'functional',
-    icon: Award,
-    iconBg: 'bg-cyan-50',
-    iconColor: 'text-cyan-600',
-    duration: '6 Weeks',
-    level: 'Intermediate',
-    students: '480+',
-    summary: 'Manage marketing, sales, and service processes in SAP CRM.',
-    description:
-      'SAP CRM covers customer-facing processes across marketing, sales, and service. The course builds core CRM master data and walks through lead-to-order and service ticket processes.',
-    highlights: [
-      'Set up business partners and CRM master data',
-      'Configure marketing and campaign management basics',
-      'Manage sales opportunities and quotations',
-      'Handle service requests and complaints',
-    ],
-    eligibility: 'Sales, marketing, and customer service professionals.',
-    tools: ['SAP CRM', 'SAP GUI'],
-    careerRoles: ['SAP CRM Consultant', 'CRM Systems Analyst'],
-    curriculum: [
-      { title: 'CRM Foundations', points: ['Business partner master data', 'Organizational model', 'CRM Middleware overview'] },
-      { title: 'Marketing', points: ['Campaign management basics', 'Target group determination', 'Lead management'] },
-      { title: 'Sales', points: ['Opportunity management', 'Quotation & order processing', 'Pricing in CRM'] },
-      { title: 'Service', points: ['Service request processing', 'Complaints & returns', 'Integration with ERP'] },
-    ],
-  },
-  {
-    id: 'plm',
-    slug: 'sap-plm',
-    title: 'SAP PLM',
-    subtitle: 'Product Lifecycle Management',
-    category: 'functional',
-    icon: Layers,
-    iconBg: 'bg-lime-50',
-    iconColor: 'text-lime-600',
-    duration: '6 Weeks',
-    level: 'Advanced',
-    students: '190+',
-    summary: 'Manage product data from design through end of life.',
-    description:
-      'SAP PLM covers document management, engineering change management, and product structure management across a product\'s lifecycle. The course connects PLM master data to downstream PP and MM processes.',
-    highlights: [
-      'Manage document info records and versions',
-      'Run engineering change management processes',
-      'Structure products with material BOMs',
-      'Understand PLM integration with PP',
-    ],
-    eligibility: 'Engineering and R&D professionals working with product data.',
-    tools: ['SAP PLM', 'SAP GUI'],
-    careerRoles: ['SAP PLM Consultant', 'Product Data Analyst'],
-    curriculum: [
-      { title: 'Document Management', points: ['Document info records', 'Versioning & status management', 'Originals & viewers'] },
-      { title: 'Engineering Change Management', points: ['Change master & change requests', 'Change number workflow', 'Impact analysis'] },
-      { title: 'Product Structure', points: ['BOM management in PLM', 'Variant configuration basics', 'Integration with PP/MM'] },
-    ],
-  },
-  {
-    id: 'ariba',
-    slug: 'sap-ariba',
-    title: 'SAP Ariba',
-    subtitle: 'Procurement & Supply Chain',
-    category: 'functional',
-    icon: ShoppingBag,
-    iconBg: 'bg-amber-50',
-    iconColor: 'text-amber-700',
-    duration: '6 Weeks',
-    level: 'Intermediate',
-    students: '390+',
-    summary: 'Run cloud-based sourcing and procurement with SAP Ariba.',
-    description:
-      'SAP Ariba is SAP\'s cloud procurement platform covering sourcing, contract management, and supplier collaboration. The course walks through Ariba Sourcing, Contracts, and P2P integration with SAP S/4HANA.',
-    highlights: [
-      'Run sourcing events and supplier negotiations',
-      'Manage contracts within Ariba Contracts',
-      'Configure procure-to-pay integration with S/4HANA',
-      'Understand supplier lifecycle and performance management',
-    ],
-    eligibility: 'Procurement professionals and SAP MM/SRM consultants moving to cloud procurement.',
-    tools: ['SAP Ariba', 'SAP S/4HANA (integration)'],
-    careerRoles: ['SAP Ariba Consultant', 'Cloud Procurement Analyst'],
-    curriculum: [
-      { title: 'Ariba Sourcing', points: ['Sourcing project setup', 'RFx & auctions', 'Supplier negotiation'] },
-      { title: 'Ariba Contracts', points: ['Contract workspace', 'Clause library & approvals', 'Contract compliance'] },
-      { title: 'Procure-to-Pay Integration', points: ['CIG/cXML integration basics', 'Requisitioning in Ariba', 'S/4HANA integration touchpoints'] },
+      { title: 'EWM Foundations', points: ['EWM vs classic WM', 'Warehouse structure setup', 'Storage bin & section configuration'] },
+      { title: 'Inbound Processing', points: ['ASN & goods receipt in EWM', 'Putaway strategies', 'Quality inspection integration'] },
+      { title: 'Outbound Processing', points: ['Outbound delivery order processing', 'Wave management', 'Picking strategies & packing'] },
+      { title: 'Resource & Labor Management', points: ['Task & resource management', 'Labor management basics', 'RF framework overview'] },
+      { title: 'Integration', points: ['EWM-MM and EWM-TM integration', 'Yard management basics', 'Reporting & monitoring'] },
     ],
   },
 
@@ -509,6 +298,7 @@ export const courses: Course[] = [
     level: 'Advanced',
     students: '870+',
     badge: 'Most Popular',
+    price: 28000,
     summary: 'Learn to build custom SAP programs, reports, and enhancements.',
     description:
       'SAP ABAP is SAP\'s core programming language. This course takes you from procedural ABAP to object-oriented ABAP and modern RAP (RESTful ABAP Programming) development for S/4HANA, including reports, forms, and enhancement techniques used on every SAP implementation.',
@@ -542,6 +332,7 @@ export const courses: Course[] = [
     duration: '10 Weeks',
     level: 'Intermediate',
     students: '540+',
+    price: 24000,
     summary: 'Administer, monitor, and maintain SAP system landscapes.',
     description:
       'SAP BASIS covers the technical administration layer that keeps every SAP system running: installation, transport management, client administration, and performance monitoring across development, quality, and production landscapes.',
@@ -562,69 +353,6 @@ export const courses: Course[] = [
     ],
   },
   {
-    id: 'security',
-    slug: 'sap-security',
-    title: 'SAP Security / GRC',
-    subtitle: 'Governance, Risk & Compliance',
-    category: 'technical',
-    icon: Shield,
-    iconBg: 'bg-red-50',
-    iconColor: 'text-red-600',
-    duration: '8 Weeks',
-    level: 'Advanced',
-    students: '410+',
-    badge: 'High Demand',
-    summary: 'Design and enforce authorization and compliance controls.',
-    description:
-      'SAP Security and GRC covers role design, authorization concepts, and segregation-of-duties controls that keep SAP systems compliant and secure. You will build roles from scratch and configure GRC Access Control for automated risk analysis.',
-    highlights: [
-      'Design roles and authorization profiles',
-      'Configure Segregation of Duties (SoD) rules',
-      'Work with SAP GRC Access Control',
-      'Handle user provisioning and access reviews',
-    ],
-    eligibility: 'IT security professionals, SAP Basis administrators, and audit/compliance professionals.',
-    tools: ['SAP GRC Access Control', 'SAP GUI', 'PFCG'],
-    careerRoles: ['SAP Security Consultant', 'GRC Analyst', 'IT Compliance Specialist'],
-    curriculum: [
-      { title: 'Authorization Concepts', points: ['Authorization objects & fields', 'Role design with PFCG', 'Composite & derived roles'] },
-      { title: 'User Administration', points: ['User provisioning & mass maintenance', 'Central User Administration (CUA)', 'Single Sign-On basics'] },
-      { title: 'GRC Access Control', points: ['Access risk analysis', 'Emergency access management', 'Access request management'] },
-      { title: 'Compliance & Audit', points: ['SoD rule sets', 'Periodic access review', 'Audit reporting'] },
-    ],
-  },
-  {
-    id: 'bibw',
-    slug: 'sap-bibw',
-    title: 'SAP BI / BW',
-    subtitle: 'Business Intelligence & Warehousing',
-    category: 'technical',
-    icon: BarChart2,
-    iconBg: 'bg-green-50',
-    iconColor: 'text-green-600',
-    duration: '10 Weeks',
-    level: 'Intermediate',
-    students: '660+',
-    summary: 'Build data models and reports on SAP BW/4HANA.',
-    description:
-      'SAP BI/BW covers data extraction, modeling, and reporting using SAP BW/4HANA. You will build InfoProviders, data flows, and queries, then connect them to reporting tools including SAP Analytics Cloud.',
-    highlights: [
-      'Extract data from SAP and non-SAP sources',
-      'Model data using ADSOs and CompositeProviders',
-      'Build queries with BEx Query Designer',
-      'Connect BW models to SAP Analytics Cloud',
-    ],
-    eligibility: 'Data/reporting professionals and SAP functional consultants moving into analytics.',
-    tools: ['SAP BW/4HANA', 'BEx Query Designer', 'SAP Analytics Cloud'],
-    careerRoles: ['SAP BW Consultant', 'BI Developer', 'Data Warehouse Analyst'],
-    curriculum: [
-      { title: 'BW Foundations', points: ['BW/4HANA architecture', 'Data extraction basics', 'InfoObjects'] },
-      { title: 'Data Modeling', points: ['Advanced DataStore Objects (ADSO)', 'CompositeProviders', 'Transformations & DTPs'] },
-      { title: 'Reporting', points: ['BEx Query Designer', 'Variables & filters', 'Query performance basics'] },
-      { title: 'Analytics Integration', points: ['SAP Analytics Cloud connectivity', 'Dashboards & stories', 'Reporting best practices'] },
-    ],
-  },
-  {
     id: 'btp',
     slug: 'sap-btp',
     title: 'SAP BTP',
@@ -637,6 +365,7 @@ export const courses: Course[] = [
     level: 'Advanced',
     students: '320+',
     badge: 'New',
+    price: 26000,
     summary: 'Extend and integrate SAP systems on the cloud platform.',
     description:
       'SAP BTP is SAP\'s platform-as-a-service for building extensions, integrations, and AI-driven applications around a core SAP system. The course covers SAP Integration Suite, extension development with CAP, and Fiori/UI5 basics.',
@@ -657,7 +386,7 @@ export const courses: Course[] = [
     ],
   },
 
-  // ── Data Science ────────────────────────────────────────
+  // ── Data Science (unchanged — separate section) ─────────
   {
     id: 'ds',
     slug: 'data-science',
@@ -671,6 +400,7 @@ export const courses: Course[] = [
     level: 'Intermediate',
     students: '890+',
     badge: 'New',
+    price: 32000,
     summary: 'Go from Python fundamentals to end-to-end data science projects.',
     description:
       'This program covers the full data science workflow: Python programming, statistics, data wrangling, visualization, and machine learning, capped with real-world capstone projects across domains like finance, retail, and healthcare.',
@@ -702,6 +432,7 @@ export const courses: Course[] = [
     duration: '12 Weeks',
     level: 'Advanced',
     students: '640+',
+    price: 30000,
     summary: 'Build and deploy machine learning and deep learning models.',
     description:
       'This course dives deep into ML algorithms and neural networks, covering the math and intuition behind each model alongside hands-on implementation in Python. You will build, tune, and deploy models using industry-standard frameworks.',
@@ -734,6 +465,7 @@ export const courses: Course[] = [
     level: 'Beginner',
     students: '720+',
     badge: 'High Demand',
+    price: 18000,
     summary: 'Turn raw data into dashboards that drive decisions.',
     description:
       'This course teaches you to model, transform, and visualize data using Power BI and Tableau. You will build interactive dashboards and learn DAX for calculated measures, finishing with a portfolio-ready analytics project.',
@@ -765,6 +497,7 @@ export const courses: Course[] = [
     duration: '6 Weeks',
     level: 'Beginner',
     students: '1100+',
+    price: 12000,
     summary: 'Query, design, and manage relational databases confidently.',
     description:
       'This course builds strong SQL fundamentals — querying, joins, aggregation, and subqueries — alongside relational database design principles using PostgreSQL, preparing you for any data-focused role.',
@@ -796,6 +529,7 @@ export const courses: Course[] = [
     duration: '8 Weeks',
     level: 'Beginner',
     students: '950+',
+    price: 15000,
     summary: 'Build a strong Python foundation for data-focused roles.',
     description:
       'This course teaches Python programming with a data focus: core syntax, NumPy for numerical computing, and Pandas for data wrangling, ending with hands-on data cleaning and analysis projects.',

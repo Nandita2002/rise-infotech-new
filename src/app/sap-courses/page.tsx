@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Settings, Code2, LayoutGrid } from 'lucide-react'
+import { Settings, Code2, LayoutGrid, ShieldCheck, Users2, Award, Headset } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import CourseCard from '@/components/CourseCard'
 import { courses } from '@/data/courses'
@@ -19,6 +19,13 @@ const subTabs: { key: SubTab; label: string; icon: React.ElementType; items: typ
   { key: 'technical', label: 'Technical', icon: Code2, items: technical },
 ]
 
+const stats = [
+  { icon: LayoutGrid, label: `${all.length} SAP Modules`, sub: 'Functional & Technical' },
+  { icon: Users2, label: '5000+ Trained', sub: 'Across all batches' },
+  { icon: Award, label: 'Certified Trainers', sub: 'Real-world consultants' },
+  { icon: Headset, label: 'Placement Support', sub: 'Resume to interview' },
+]
+
 export default function SapCoursesPage() {
   const [activeTab, setActiveTab] = useState<SubTab>('all')
 
@@ -30,6 +37,7 @@ export default function SapCoursesPage() {
   return (
     <section className="bg-white py-16 lg:py-24">
       <Container>
+        {/* Hero */}
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-600">
             SAP Training
@@ -38,11 +46,29 @@ export default function SapCoursesPage() {
             SAP ERP Courses
           </h1>
           <p className="text-base leading-relaxed text-slate-500">
-            19+ SAP Functional and Technical modules taught through live instructor-led
+            {all.length} SAP Functional and Technical modules taught through live instructor-led
             classes, real-time implementation projects, and placement support.
           </p>
         </div>
 
+        {/* Stats strip */}
+        <div className="mx-auto mb-12 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
+          {stats.map((s) => {
+            const StatIcon = s.icon
+            return (
+              <div
+                key={s.label}
+                className="flex flex-col items-center gap-1.5 rounded-2xl border border-slate-100 bg-slate-50 px-3 py-4 text-center"
+              >
+                <StatIcon size={18} className="text-blue-600" />
+                <p className="text-xs font-bold text-slate-800">{s.label}</p>
+                <p className="text-[11px] text-slate-400">{s.sub}</p>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Tabs */}
         <div className="mb-10 flex flex-wrap justify-center gap-2">
           {subTabs.map((tab) => {
             const TabIcon = tab.icon
@@ -71,6 +97,7 @@ export default function SapCoursesPage() {
           })}
         </div>
 
+        {/* Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -85,6 +112,14 @@ export default function SapCoursesPage() {
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* Trust strip */}
+        <div className="mx-auto mt-16 flex max-w-xl items-center justify-center gap-2 rounded-2xl border border-slate-100 bg-slate-50 px-6 py-4 text-center">
+          <ShieldCheck size={16} className="flex-shrink-0 text-blue-600" />
+          <p className="text-xs text-slate-500">
+            Secure UPI payments &middot; Manual verification within 24 hours &middot; Full refund if a batch is cancelled
+          </p>
+        </div>
       </Container>
     </section>
   )
