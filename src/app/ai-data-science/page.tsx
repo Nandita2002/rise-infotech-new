@@ -1,41 +1,61 @@
 'use client'
 
 import { motion } from 'framer-motion'
+
 import Container from '@/components/ui/Container'
 import CourseCard from '@/components/CourseCard'
 import { courses } from '@/data/courses'
 
-const datascience = courses
-  .filter((c) => c.category === 'datascience')
-  .map((c) => ({ ...c, href: `/courses/${c.slug}` }))
+const aiCourses = courses
+  .filter(
+    (course) =>
+      course.slug.includes('ai') ||
+      course.slug.includes('data') ||
+      course.slug.includes('python')
+  )
+  .map((course) => ({
+    ...course,
+    href: `/courses/${course.slug}`,
+  }))
 
 export default function AiDataSciencePage() {
   return (
     <section className="bg-white py-16 lg:py-24">
       <Container>
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-600">
-            AI &amp; Data Science
-          </span>
-          <h1 className="mb-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-            AI &amp; Data Science Courses
+
+        {/* Hero */}
+
+        <div className="mb-14 bg-[#0769B4] px-8 py-12 text-center text-white">
+
+          <h1 className="text-4xl font-bold">
+            AI & Data Science Courses
           </h1>
-          <p className="text-base leading-relaxed text-slate-500">
-            Build future-ready skills in Artificial Intelligence, Machine Learning, Data
-            Science, Python and Business Analytics through practical, project-based learning.
+
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-blue-100">
+            Build future-ready skills in Artificial Intelligence, Machine
+            Learning, Data Science, Python, Business Analytics and emerging
+            technologies through practical, project-based learning.
           </p>
+
         </div>
 
+        {/* Courses */}
+
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="grid gap-7 md:grid-cols-2 lg:grid-cols-3"
         >
-          {datascience.map((item, i) => (
-            <CourseCard key={item.id} item={item} index={i} />
+          {aiCourses.map((course, index) => (
+            <CourseCard
+              key={course.id}
+              item={course}
+              index={index}
+            />
           ))}
         </motion.div>
+
       </Container>
     </section>
   )
