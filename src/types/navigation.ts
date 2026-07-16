@@ -11,6 +11,6 @@ export interface NavCategory {
 export interface NavItem {
   label: string
   href: string
-  megaMenu?: NavCategory[] // for multi-column dropdowns like SAP Courses
-  children?: NavChild[]    // for simple single-column dropdowns
+  megaMenu?: NavCategory[]
+  children?: NavChild[]
 }

@@ -1,377 +1,382 @@
-'use client'
+import Image from "next/image";
+import Link from "next/link";
 
 import {
-  Award,
-  BookOpen,
-  Briefcase,
-  Building2,
-  CheckCircle2,
-  ClipboardCheck,
   GraduationCap,
   Laptop,
   ShieldCheck,
-  UserPlus,
   Users,
-    Target,
+  Target,
   Eye,
-} from 'lucide-react'
-
-import FeatureCard from '@/components/ui/FeatureCard'
-
-import {
   HeartHandshake,
+  CheckCircle2,
+} from "lucide-react";
 
-} from 'lucide-react'
+import Container from "@/components/ui/Container";
+import SectionHeading from "@/components/ui/SectionHeading";
+import CTASection from "@/components/ui/CTA";
 
-import CTA from '@/components/ui/CTA'
-import Container from '@/components/ui/Container'
-import PageHero from '@/components/ui/PageHero'
-import SectionHeading from '@/components/ui/SectionHeading'
-import Stats from '@/components/ui/Stats'
-import Timeline from '@/components/ui/Timeline'
-import Testimonials from '@/components/sections/Testimonials'
-import Instructor from '@/components/sections/Instructor'
 
+const features = [
+  "SAP ERP Training",
+  "AI & Data Science",
+  "Corporate Training",
+  "Live Projects",
+  "Placement Assistance",
+  "IT Consulting",
+];
+
+const whyChoose = [
+  {
+    icon: GraduationCap,
+    title: "Industry Expert Trainers",
+    description:
+      "Learn from experienced SAP consultants and industry professionals with real implementation expertise.",
+  },
+  {
+    icon: Laptop,
+    title: "Hands-on Live Projects",
+    description:
+      "Gain practical experience through real-world projects, assignments and business case studies.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Certification Guidance",
+    description:
+      "Expert mentoring, certification preparation and continuous support to help you achieve your goals.",
+  },
+  {
+    icon: Users,
+    title: "Placement Assistance",
+    description:
+      "Resume preparation, mock interviews and career guidance to help learners secure the right opportunities.",
+  },
+];
+const foundation = [
+  {
+    icon: Target,
+    title: "Our Mission",
+    description:
+      "Provide industry-focused SAP, AI and Data Science training through practical learning, live projects and career-oriented mentorship.",
+  },
+  {
+    icon: Eye,
+    title: "Our Vision",
+    description:
+      "Become India's trusted destination for professional training by empowering learners and organizations through quality education.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Our Commitment",
+    description:
+      "Deliver exceptional learning experiences with expert trainers, certification guidance and placement assistance.",
+  },
+];
 export default function AboutPage() {
-  const aboutStats = [
-    {
-      value: 15,
-      suffix: '+',
-      label: 'Years Experience',
-      description: 'Delivering quality education',
-    },
-    {
-      value: 5000,
-      suffix: '+',
-      label: 'Students Trained',
-      description: 'Across India',
-    },
-    {
-      value: 30,
-      suffix: '+',
-      label: 'SAP Modules',
-      description: 'Functional & Technical',
-    },
-    {
-      value: 95,
-      suffix: '%',
-      label: 'Placement Assistance',
-      description: 'Career focused training',
-    },
-  ]
-
-  const learningJourney = [
-    {
-      icon: UserPlus,
-      title: 'Enroll',
-      description:
-        'Choose your preferred course and complete the admission process.',
-    },
-    {
-      icon: GraduationCap,
-      title: 'Training',
-      description:
-        'Attend instructor-led sessions with practical business scenarios.',
-    },
-    {
-      icon: ClipboardCheck,
-      title: 'Projects',
-      description:
-        'Work on real-time industry projects and assignments.',
-    },
-    {
-      icon: Award,
-      title: 'Certification',
-      description:
-        'Get certification guidance and interview preparation.',
-    },
-    {
-      icon: Briefcase,
-      title: 'Placement',
-      description:
-        'Receive dedicated placement assistance to kickstart your career.',
-    },
-  ]
-
   return (
     <>
-      <PageHero
-        badge="About Rise Infotech"
-        title="Empowering Careers Through Practical Learning"
-        description="Rise Infotech helps students and professionals build successful careers through SAP ERP, Data Science, Corporate Training, Live Projects and Industry-focused learning."
-        breadcrumbs={[
-          {
-            label: 'Home',
-            href: '/',
-          },
-          {
-            label: 'About Us',
-          },
-        ]}
-      />
+    {/* ==========================================================
+WHO WE ARE
+========================================================== */}
 
-      {/* ================= ABOUT STORY ================= */}
+<section className="bg-white py-14 lg:py-16">
+  <Container>
+    <div className="grid items-center gap-10 lg:grid-cols-2">
 
-      <section className="py-20 lg:py-28">
-        <Container>
-          <div className="grid items-center gap-16 lg:grid-cols-2">
+      {/* Left Content */}
 
-            <div>
+      <div>
+        <SectionHeading
+          badge="Who We Are"
+          title="Empowering Careers Through Practical Learning"
+          align="left"
+        />
 
-              <SectionHeading
-                badge="Who We Are"
-                title="Building Future Professionals Through Practical Learning"
-                description="Rise Infotech is dedicated to transforming aspiring professionals into industry-ready experts through practical, career-focused education."
-                align="left"
+        <p className="mt-6 leading-8 text-slate-600">
+          Rise Infotech empowers individuals with comprehensive SAP ERP
+          training, including End User Courses, Consultant-Level Training,
+          Corporate Programs and Internship Programs for college students.
+          Through flexible online and offline learning, real-time projects,
+          and expert mentorship, we prepare learners with practical,
+          job-ready skills for successful careers.
+        </p>
+
+        <p className="mt-5 leading-8 text-slate-600">
+          Beyond training, we also provide IT Services, SAP Consulting,
+          SAP Outsourcing and Corporate Training solutions, helping
+          organizations accelerate digital transformation with skilled
+          professionals and implementation support.
+        </p>
+
+        {/* Highlights */}
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+
+          {features.map((item) => (
+
+            <div
+              key={item}
+              className="flex items-center gap-3"
+            >
+              <CheckCircle2
+                size={18}
+                className="text-[#0769B4]"
               />
 
-              <p className="mt-6 leading-8 text-slate-600">
-                We specialize in SAP ERP Functional & Technical Training,
-                Corporate Training, Internship Programs, Industrial Visits,
-                Data Science and Analytics programs designed to bridge the
-                gap between academics and real industry requirements.
-              </p>
+              <span className="font-medium text-slate-700">
+                {item}
+              </span>
+            </div>
 
-              <p className="mt-6 leading-8 text-slate-600">
-                Our experienced trainers combine years of implementation
-                experience with modern teaching methods, ensuring every
-                learner gains practical knowledge through live projects,
-                certification guidance and placement assistance.
-              </p>
+          ))}
 
-              <div className="mt-10 grid gap-5 sm:grid-cols-2">
+        </div>
 
-                <div className="flex items-center gap-3">
-                  <Laptop className="text-#0769B4" />
-                  <span className="font-medium">
-                    Live Projects
-                  </span>
-                </div>
+      </div>
 
-                <div className="flex items-center gap-3">
-                  <BookOpen className="text-#0769B4" />
-                  <span className="font-medium">
-                    Industry Experts
-                  </span>
-                </div>
+      {/* Right Image */}
 
-                <div className="flex items-center gap-3">
-                  <ShieldCheck className="text-#0769B4" />
-                  <span className="font-medium">
-                    Certification Guidance
-                  </span>
-                </div>
+      <div>
 
-                <div className="flex items-center gap-3">
-                  <Users className="text-#0769B4" />
-                  <span className="font-medium">
-                    Placement Assistance
-                  </span>
-                </div>
+        <Image
+          src="/rise2.jpeg"
+          alt="Rise Infotech Training"
+          width={700}
+          height={550}
+          className="w-full rounded-2xl border border-slate-200 object-cover shadow-lg"
+        />
 
-              </div>
+      </div>
+
+    </div>
+  </Container>
+</section>
+
+{/* ==========================================================
+WHY CHOOSE RISE INFOTECH
+========================================================== */}
+
+<section className="bg-slate-50 py-14 lg:py-16">
+  <Container>
+
+    <SectionHeading
+      badge="Why Choose Us"
+      title="Why Students Choose Rise Infotech"
+    />
+
+    <div className="mt-10 grid gap-6 md:grid-cols-2">
+
+      {whyChoose.map((item) => {
+
+        const Icon = item.icon
+
+        return (
+
+          <div
+            key={item.title}
+            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
+          >
+
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 transition-all duration-300 group-hover:bg-[#0769B4]">
+
+              <Icon
+                size={28}
+                className="text-[#0769B4] transition-all duration-300 group-hover:text-white"
+              />
 
             </div>
 
-            {/* Right */}
+            <h3 className="text-xl font-bold text-slate-900">
+              {item.title}
+            </h3>
 
-            <div className="relative">
+            <p className="mt-3 leading-7 text-slate-600">
+              {item.description}
+            </p>
 
-              <div className="rounded-[32px] border border-slate-200 bg-gradient-to-br from-#0769B4-50 to-white p-12 shadow-xl">
+          </div>
 
-                <Building2
-                  size={220}
-                  className="mx-auto text-#0769B4"
-                />
+        )
 
-                <div className="mt-10 space-y-5">
+      })}
 
-                  <div className="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
+    </div>
 
-                    <CheckCircle2 className="text-green-600" />
+  </Container>
+</section>
+{/* ==========================================================
+MEET OUR FOUNDER
+========================================================== */}
 
-                    <span>
-                      SAP Functional & Technical Training
-                    </span>
+<section className="bg-white py-14 lg:py-16">
+  <Container>
 
-                  </div>
+    <SectionHeading
+      badge="Founder"
+      title="Meet Our Founder"
+      description="Driven by industry experience and a passion for mentoring, our founder has helped thousands of students build successful careers."
+    />
 
-                  <div className="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
+    <div className="mt-10 grid items-center gap-10 lg:grid-cols-[340px_1fr]">
 
-                    <CheckCircle2 className="text-green-600" />
+      {/* Founder Image */}
 
-                    <span>
-                      Corporate Training Programs
-                    </span>
+      <div>
 
-                  </div>
+        <Image
+          src="/founder.png"
+          alt="Mr. Kumaresh Bidari"
+          width={500}
+          height={600}
+          className="w-full rounded-2xl border border-slate-200 shadow-lg"
+        />
 
-                  <div className="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
+      </div>
 
-                    <CheckCircle2 className="text-green-600" />
+      {/* Founder Details */}
 
-                    <span>
-                      Internship & Live Projects
-                    </span>
+      <div>
 
-                  </div>
+        <span className="inline-block rounded-full bg-blue-50 px-4 py-1 text-sm font-semibold text-[#0769B4]">
+          Founder & CEO
+        </span>
 
-                </div>
+        <h2 className="mt-4 text-3xl font-bold text-slate-900">
+          Mr. Kumaresh Bidari
+        </h2>
 
-              </div>
+        <p className="mt-6 leading-8 text-slate-600">
+          Mr. Kumaresh Bidari is an experienced SAP ERP consultant,
+          corporate trainer and technology mentor with over 10 years of
+          industry expertise. Through practical learning, real-world
+          implementation projects and personalized mentoring, he has helped
+          thousands of students and professionals build successful careers
+          in the SAP ecosystem.
+        </p>
+
+        {/* Experience */}
+
+        <div className="mt-8 grid grid-cols-2 gap-5">
+
+          <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+
+            <h3 className="text-3xl font-bold text-[#0769B4]">
+              10+
+            </h3>
+
+            <p className="mt-1 text-sm text-slate-600">
+              Years of Experience
+            </p>
+
+          </div>
+
+          <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+
+            <h3 className="text-3xl font-bold text-[#0769B4]">
+              5000+
+            </h3>
+
+            <p className="mt-1 text-sm text-slate-600">
+              Students Mentored
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* Social */}
+
+        <div className="mt-8 flex flex-wrap gap-4">
+
+          <Link
+            href="https://www.instagram.com/"
+            target="_blank"
+            className="rounded-xl border border-slate-200 px-5 py-3 font-medium text-slate-700 transition hover:border-[#0769B4] hover:text-[#0769B4]"
+          >
+            Instagram
+          </Link>
+
+          <Link
+            href="https://www.linkedin.com/"
+            target="_blank"
+            className="rounded-xl bg-[#0769B4] px-5 py-3 font-medium text-white transition hover:bg-[#055A99]"
+          >
+            LinkedIn
+          </Link>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </Container>
+</section>
+{/* ==========================================================
+OUR FOUNDATION
+========================================================== */}
+
+<section className="bg-slate-50 py-14 lg:py-16">
+  <Container>
+
+    <SectionHeading
+      badge="Our Foundation"
+      title="Driven by Purpose, Guided by Excellence"
+      description="Everything we do is centered around helping learners gain practical knowledge, build confidence and achieve successful careers."
+    />
+
+    <div className="mt-10 grid gap-6 lg:grid-cols-3">
+
+      {foundation.map((item) => {
+
+        const Icon = item.icon
+
+        return (
+
+          <div
+            key={item.title}
+            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
+          >
+
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 transition-all duration-300 group-hover:bg-[#0769B4]">
+
+              <Icon
+                size={28}
+                className="text-[#0769B4] transition-all duration-300 group-hover:text-white"
+              />
 
             </div>
 
-          </div>
-        </Container>
-      </section>
+            <h3 className="text-xl font-bold text-slate-900">
+              {item.title}
+            </h3>
 
-      <Stats stats={aboutStats} />
-
-      {/* Part 2 Starts Here */}
-            {/* ================= MISSION • VISION • COMMITMENT ================= */}
-
-      <section className="bg-slate-50 py-20 lg:py-28">
-        <Container>
-          <SectionHeading
-            badge="Our Foundation"
-            title="Driven by Purpose, Guided by Excellence"
-            description="Everything we do is focused on helping learners gain practical knowledge, build confidence, and achieve successful careers."
-          />
-
-          <div className="mt-16 grid gap-8 lg:grid-cols-3">
-            {[
-              {
-                icon: Target,
-                title: 'Our Mission',
-                description:
-                  'To deliver industry-oriented education through practical training, live projects, mentorship and career guidance that empowers learners for long-term success.',
-              },
-              {
-                icon: Eye,
-                title: 'Our Vision',
-                description:
-                  'To become one of India’s most trusted institutes for SAP ERP, Data Science, Analytics and Corporate Learning by continuously delivering quality education.',
-              },
-              {
-                icon: HeartHandshake,
-                title: 'Our Commitment',
-                description:
-                  'We are committed to providing personalized learning experiences, expert mentorship, placement support and continuous professional development.',
-              },
-            ].map((item) => {
-              const Icon = item.icon
-
-              return (
-                <div
-                  key={item.title}
-                  className="group rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-#0769B4-100 hover:shadow-xl"
-                >
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-#0769B4-50 text-#0769B4 transition-all duration-300 group-hover:bg-#0769B4 group-hover:text-white">
-                    <Icon size={30} />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-5 leading-8 text-slate-600">
-                    {item.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </Container>
-      </section>
-
-      {/* ================= WHY RISE INFOTECH ================= */}
-
-      <section className="py-20 lg:py-28">
-        <Container>
-          <SectionHeading
-            badge="Why Choose Us"
-            title="Why Thousands Choose Rise Infotech"
-            description="We combine practical industry knowledge with personalized mentoring to help learners become confident professionals."
-          />
-
-          <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            <FeatureCard
-              icon={GraduationCap}
-              title="Industry Expert Trainers"
-              description="Learn from certified SAP consultants and experienced professionals with real implementation expertise."
-              color="blue"
-            />
-
-            <FeatureCard
-              icon={Laptop}
-              title="Hands-on Live Projects"
-              description="Gain practical exposure by working on industry-oriented assignments and real-time business scenarios."
-              color="green"
-            />
-
-            <FeatureCard
-              icon={Briefcase}
-              title="Placement Assistance"
-              description="Resume building, mock interviews and career guidance to help you secure the right opportunity."
-              color="orange"
-            />
-
-            <FeatureCard
-              icon={Building2}
-              title="Corporate Training"
-              description="Customized SAP and Analytics training solutions designed specifically for organizations."
-              color="purple"
-            />
-
-            <FeatureCard
-              icon={Award}
-              title="Certification Guidance"
-              description="Complete guidance for SAP certification preparation with expert mentoring and practice sessions."
-              color="blue"
-            />
-
-            <FeatureCard
-              icon={Users}
-              title="Internship Programs"
-              description="Industry internships and project-based learning to gain practical experience before entering the workforce."
-              color="green"
-            />
+            <p className="mt-3 leading-7 text-slate-600">
+              {item.description}
+            </p>
 
           </div>
-        </Container>
-      </section>
 
-      {/* ================= LEARNING JOURNEY ================= */}
+        )
 
-      <Timeline
-        subtitle="OUR PROCESS"
-        title="Your Learning Journey"
-        items={learningJourney}
-      />
+      })}
 
-      {/* Part 3 Starts Here */}
-            {/* ================= FOUNDER MESSAGE ================= */}
+    </div>
 
-   <Instructor />
+  </Container>
+</section>
+{/* ==========================================================
+CALL TO ACTION
+========================================================== */}
 
-      {/* ================= TESTIMONIALS ================= */}
-
-      <Testimonials />
-
-      {/* ================= CTA ================= */}
-
-      <CTA
-        badge="Start Your Journey"
-        title="Ready to Build Your Career with Rise Infotech?"
-        description="Join thousands of students and professionals who have transformed their careers through practical SAP ERP training, Data Science programs, Corporate Learning, Live Projects and dedicated placement assistance."
-        primaryButtonText="Explore Courses"
-        primaryButtonHref="/courses"
-        secondaryButtonText="Contact Us"
-        secondaryButtonHref="/contact"
-      />
-
-    </>
-  )
+<CTASection
+  title="Ready to Build Your Career?"
+  description="Join Rise Infotech and gain practical skills through live instructor-led training, real-world projects, certification guidance and dedicated placement assistance."
+  primaryButtonText="Explore Courses"
+  primaryButtonHref="/courses"
+  secondaryButtonText="Contact Us"
+  secondaryButtonHref="/contact"
+/>
+</>
+  );
 }

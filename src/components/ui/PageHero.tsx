@@ -17,8 +17,6 @@ interface PageHeroProps {
 
 export default function PageHero({
   badge,
-  title,
-  description,
   breadcrumbs = [],
 }: PageHeroProps) {
   return (
@@ -68,16 +66,6 @@ export default function PageHero({
               {badge}
             </span>
           )}
-
-          {/* Title */}
-          <h1 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            {title}
-          </h1>
-
-          {/* Description */}
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            {description}
-          </p>
         </motion.div>
       </Container>
     </section>

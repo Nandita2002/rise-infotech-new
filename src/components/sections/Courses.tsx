@@ -72,6 +72,21 @@ const programs: Program[] = [
 
     href: '/workshops&bootcamps',
   },
+  {
+    id: 'corporate training',
+
+    image: '/corporate.png',
+
+    title: 'Corporate Training',
+
+    description:
+      'Enhance your team\'s skills with our customized corporate training programs, designed to meet your organization\'s unique needs and goals.',
+
+
+    ctaLabel: 'Explore Corporate Training',
+
+    href: '/corporate-training',
+  },
 ]
 /* ────────────────────────────────────────────────
    Program Card
@@ -95,7 +110,7 @@ function ProgramCard({
         ease: [0.22, 1, 0.36, 1],
       }}
       whileHover={{ y: -8 }}
-      className="group flex h-full min-h-[620px] flex-col border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#0769B4] hover:shadow-xl"
+      className="group flex h-full min-h-[480px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-xl"
     >
       {/* ================= IMAGE ================= */}
 
@@ -107,20 +122,20 @@ function ProgramCard({
           width={600}
           height={420}
           priority={index === 0}
-          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
       </div>
 
       {/* ================= CONTENT ================= */}
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-5">
 
-        <h3 className="mb-4 text-2xl font-bold text-slate-900">
+        <h3 className="mb-3 text-xl font-bold leading-tight text-slate-900">
           {program.title}
         </h3>
 
-        <p className="mb-6 leading-8 text-slate-600">
+        <p className="mb-5 text-[15px] leading-7 text-slate-600">
           {program.description}
         </p>
 
@@ -155,8 +170,8 @@ export default function Courses() {
 
       <div className="mb-12 bg-[#0769B4] px-8 py-10 text-center shadow-xl lg:px-16">
 
-        <span className="inline-flex items-center border border-white/30 bg-white/10 px-6 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
-          WHAT WE OFFER
+        <span className="inline-flex items-center border border-white/30 bg-white/10 px-6 py-2 text-xs font-bold tracking-[0.25em] text-white backdrop-blur-sm">
+          What we offer
         </span>
 
         <h2 className="mt-6 text-4xl font-extrabold text-white lg:text-5xl">
@@ -175,7 +190,7 @@ export default function Courses() {
 
       <Container>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
           {programs.map((program, index) => (
             <ProgramCard

@@ -188,31 +188,32 @@ function NetworkBackground() {
 
 // ── Partner logos ────────────────────────────────────────────
 const sapPartners = [
-  {
+   {
     name: "SAP",
     logo: "SAP",
-    color: "#123498",
+    color: "#0769B4",
   },
   {
-    name: "S/4HANA",
-    logo: "S/4HANA",
-    color: "#0F5CC0",
+    name: "Artificial Intelligence",
+    logo: "AI",
+    color: "#2563EB",
   },
   {
-    name: "BTP",
-    logo: "BTP",
-    color: "#0A4AA3",
-  },
-  {
-    name: "ABAP",
-    logo: "ABAP",
+    name: "Data Science",
+    logo: "Data Science",
     color: "#1D4ED8",
   },
   {
-    name: "Success",
-    logo: "Industry Ready",
-    color: "#1E3A8A",
+    name: "Corporate Training",
+    logo: "Corporate",
+    color: "#1E40AF",
   },
+  {
+    name: "Workshops",
+    logo: "Workshops",
+    color: "#123498",
+  },
+ 
 ]
 // ── Main Hero ────────────────────────────────────────────────
 export default function Hero() {
@@ -249,25 +250,27 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* Headline */}
-            <motion.h1
-              variants={fadeUp}
-              className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-slate-900 leading-[1.08] tracking-tight mb-4"
-            >
-              Build Your{' '}
-              <span className="text-[#0769B4] block">SAP Career</span>
-              with Industry Experts
-            </motion.h1>
+           {/* Headline */}
+<motion.h1
+  variants={fadeUp}
+  className="mb-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-4xl xl:text-5xl"
+>
+  Best Training Institute for
+  <span className="block text-[#0769B4]">
+    SAP, AI & Data Science
+  </span>
+</motion.h1>
 
-            {/* Sub-copy */}
-            <motion.p
-              variants={fadeUp}
-              className="text-sm sm:text-base leading-7 text-slate-500 mb-7 max-w-lg mx-auto lg:mx-0"
-            >
-              Learn SAP Functional &amp; Technical Modules through live instructor-led
-              sessions, real-time projects, certification guidance and dedicated placement
-              assistance.
-            </motion.p>
+{/* Sub-copy */}
+<motion.p
+  variants={fadeUp}
+  className="mx-auto mb-7 max-w-xl text-sm leading-7 text-slate-500 sm:text-base lg:mx-0"
+>
+  Master SAP, Artificial Intelligence, Data Science, Corporate Training,
+  and industry-focused workshops through live instructor-led sessions,
+  hands-on projects, certification guidance, and dedicated placement
+  assistance.
+</motion.p>
 
             {/* CTA buttons */}
             <motion.div
@@ -307,7 +310,7 @@ export default function Hero() {
             {/* Stats */}
             <motion.div variants={fadeUp} className="flex justify-center lg:justify-start">
               <div className="flex items-center gap-4 sm:gap-8 bg-white border border-slate-100 rounded-2xl px-4 sm:px-7 py-4 shadow-sm">
-                <StatBadge value="15+" label="Years of Excellence" color="text-slate-800" />
+                <StatBadge value="10+" label="Years of Excellence" color="text-slate-800" />
                 <div className="w-px h-10 bg-slate-100 flex-shrink-0" />
                 <StatBadge value="5000+" label="Students Trained" color="text-blue-600" />
                 <div className="w-px h-10 bg-slate-100 flex-shrink-0" />
@@ -399,39 +402,31 @@ export default function Hero() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  className="mt-8 border-y border-slate-100 bg-slate-50 py-6"
+  className="mt-8 border-y border-slate-100 bg-slate-50 py-8"
 >
-<Container>
-  <div className="text-center">
+  <Container>
+    <div className="text-center">
+      <p className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-[#0769B4]">
+        Trusted Technologies & Industry Platforms
+      </p>
 
-    <p className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-[#0769B4]">
-      OUR TRAINING ALIGNS WITH
-    </p>
-
-    <div className="flex flex-wrap justify-center gap-4">
-
-      {sapPartners.map((partner) => (
-
-        <div
-          key={partner.name}
-          className="border border-slate-200 bg-white px-6 py-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
-        >
-
-          <span
-            className="text-base font-bold tracking-wide"
-            style={{ color: partner.color }}
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        {sapPartners.map((partner) => (
+          <div
+            key={partner.name}
+            className="flex h-16 min-w-[170px] items-center justify-center rounded-lg border border-slate-200 bg-white px-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
           >
-            {partner.logo}
-          </span>
-
-        </div>
-
-      ))}
-
+            <span
+              className="text-lg font-bold tracking-wide"
+              style={{ color: partner.color }}
+            >
+              {partner.logo}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
-
-  </div>
-</Container>
+  </Container>
 </motion.div>
     </section>
   )

@@ -20,8 +20,8 @@ export default function FAQ() {
     <section id="faq" className="py-20 bg-white">
           <div className="mb-16  bg-[#0769B4] px-8 py-14 text-center shadow-lg">
 
-  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
-    GOT QUESTIONS?
+  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-xs font-bold  tracking-[0.25em] text-white backdrop-blur-sm">
+    Got Questions?
   </span>
 
   <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">

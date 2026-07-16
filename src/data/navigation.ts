@@ -7,51 +7,94 @@ export const contactInfo = {
 }
 
 export const socialMediaList = [
-  { id: 'facebook', url: 'https://facebook.com', icon: 'facebook' },
   { id: 'instagram', url: 'https://instagram.com', icon: 'instagram' },
   { id: 'linkedin', url: 'https://linkedin.com', icon: 'linkedin' },
   { id: 'youtube', url: 'https://youtube.com', icon: 'youtube' },
 ]
 
 export const navItems: NavItem[] = [
-  { label: 'About Us', href: '/about' },
+  {
+    label: 'About',
+    href: '/about',
+  },
+
   {
     label: 'SAP ERP Courses',
-    href: '/courses',
-    megaMenu: [
+    href: '/sap-courses',
+    children: [
+      { label: 'SAP MM', href: '/courses/sap-mm' },
+      { label: 'SAP SD', href: '/courses/sap-sd' },
+      { label: 'SAP FICO', href: '/courses/sap-fico' },
+      { label: 'SAP EWM', href: '/courses/sap-ewm' },
+      { label: 'SAP PP', href: '/courses/sap-pp' },
+      { label: 'SAP QM', href: '/courses/sap-qm' },
+      { label: 'SAP PM', href: '/courses/sap-pm' },
+      { label: 'SAP ABAP', href: '/courses/sap-abap' },
+      { label: 'SAP BASIS', href: '/courses/sap-basis' },
+      { label: 'SAP BTP', href: '/courses/sap-btp' },
+    ],
+  },
+
+  {
+    label: 'AI & Data Science',
+    href: '/ai-data-science',
+    children: [
       {
-        label: 'Functional Modules',
-        items: [
-          { label: 'SAP MM', href: '/courses/sap-mm' },
-          { label: 'SAP SD', href: '/courses/sap-sd' },
-          { label: 'SAP FICO', href: '/courses/sap-fico' },
-          { label: 'SAP EWM', href: '/courses/sap-ewm' },
-          { label: 'SAP TM', href: '/courses/sap-tm' },
-          { label: 'SAP PP', href: '/courses/sap-pp' },
-          { label: 'SAP QM', href: '/courses/sap-qm' },
-          { label: 'SAP PM', href: '/courses/sap-pm' },
-          { label: 'SAP PS', href: '/courses/sap-ps' },
-          { label: 'SAP HR / HCM', href: '/courses/sap-hcm' },
-          { label: 'SAP SRM', href: '/courses/sap-srm' },
-          { label: 'SAP CRM', href: '/courses/sap-crm' },
-          { label: 'SAP PLM', href: '/courses/sap-plm' },
-          { label: 'SAP Ariba', href: '/courses/sap-ariba' },
-        ],
+        label: 'Python Programming',
+        href: '/courses/python-programming',
       },
       {
-        label: 'Technical Modules',
-        items: [
-          { label: 'SAP ABAP', href: '/courses/sap-abap' },
-          { label: 'SAP BASIS', href: '/courses/sap-basis' },
-          { label: 'SAP Security / GRC', href: '/courses/sap-security' },
-          { label: 'SAP BI / BW', href: '/courses/sap-bibw' },
-          { label: 'SAP BTP', href: '/courses/sap-btp' },
-        ],
+        label: 'Data Science',
+        href: '/courses/data-science',
+      },
+      {
+        label: 'Machine Learning',
+        href: '/courses/machine-learning',
+      },
+      {
+        label: 'Artificial Intelligence',
+        href: '/courses/artificial-intelligence',
+      },
+      {
+        label: 'Power BI',
+        href: '/courses/power-bi',
       },
     ],
   },
-  { label: 'Other Courses', href: '/other-courses' },
-  { label: 'Corporate Training', href: '/corporate' },
-  { label: 'Testimonials', href: '/testimonials' },
-  { label: 'Contact Us', href: '/contact' },
+
+  {
+    label: 'Workshops',
+    href: '/workshops&bootcamps',
+    children: [
+      {
+        label: 'SAP S/4HANA Migration',
+        href: '/workshops/s4hana',
+      },
+      {
+        label: 'SAP Fiori & UI5',
+        href: '/workshops/fiori',
+      },
+      {
+        label: 'SAP Certification Prep',
+        href: '/workshops/certification',
+      },
+      {
+        label: 'SAP Career Bootcamp',
+        href: '/workshops/career',
+      },
+      {
+        label: 'Data Science Bootcamp',
+        href: '/workshops/data-science',
+      },
+      {
+        label: 'Power BI Masterclass',
+        href: '/workshops/powerbi',
+      },
+    ],
+  },
+
+  {
+    label: 'Contact',
+    href: '/contact',
+  },
 ]

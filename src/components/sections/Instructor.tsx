@@ -101,7 +101,7 @@ export default function Instructor() {
 
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <h4 className="text-4xl font-extrabold text-[#0769B4]">
-                  15+
+                  10+
                 </h4>
 
                 <p className="mt-2 font-semibold text-slate-900">
