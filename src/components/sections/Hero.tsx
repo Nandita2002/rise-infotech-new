@@ -100,15 +100,15 @@ function NetworkNode({ cx, cy, r = 5, delay = 0, color = '#3b82f6' }: NodeProps)
 function NetworkBackground() {
   // nodes: [x, y, radius, delay, color]
   const nodes: [number, number, number, number, string][] = [
-    [80,  60,  6, 0.0, '#3b82f6'],
-    [200, 30,  5, 0.3, '#818cf8'],
-    [340, 80,  7, 0.6, '#3b82f6'],
-    [460, 40,  5, 0.2, '#a78bfa'],
+    [80, 60, 6, 0.0, '#3b82f6'],
+    [200, 30, 5, 0.3, '#818cf8'],
+    [340, 80, 7, 0.6, '#3b82f6'],
+    [460, 40, 5, 0.2, '#a78bfa'],
     [520, 150, 6, 0.8, '#3b82f6'],
     [400, 200, 5, 0.4, '#60a5fa'],
     [260, 190, 7, 0.9, '#3b82f6'],
     [120, 180, 5, 0.5, '#818cf8'],
-    [60,  300, 6, 0.7, '#3b82f6'],
+    [60, 300, 6, 0.7, '#3b82f6'],
     [200, 340, 5, 0.3, '#60a5fa'],
     [380, 320, 6, 0.6, '#818cf8'],
     [500, 290, 5, 0.1, '#3b82f6'],
@@ -119,9 +119,9 @@ function NetworkBackground() {
 
   // edges between node pairs
   const edges: [number, number][] = [
-    [0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0],
-    [1,6],[2,5],[6,9],[8,13],[9,12],[10,11],[11,4],
-    [7,8],[12,14],[13,9],[5,10],[3,10],[14,11],
+    [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0],
+    [1, 6], [2, 5], [6, 9], [8, 13], [9, 12], [10, 11], [11, 4],
+    [7, 8], [12, 14], [13, 9], [5, 10], [3, 10], [14, 11],
   ]
 
   return (
@@ -163,7 +163,7 @@ function NetworkBackground() {
       ))}
 
       {/* Traveling pulse along a few edges */}
-      {[[0,1],[2,5],[6,9],[4,11]].map(([a,b], i) => (
+      {[[0, 1], [2, 5], [6, 9], [4, 11]].map(([a, b], i) => (
         <motion.circle
           key={`pulse-${i}`}
           r="3"
@@ -188,7 +188,7 @@ function NetworkBackground() {
 
 // ── Partner logos ────────────────────────────────────────────
 const sapPartners = [
-   {
+  {
     name: "SAP",
     logo: "SAP",
     color: "#0769B4",
@@ -213,21 +213,21 @@ const sapPartners = [
     logo: "Workshops",
     color: "#123498",
   },
- 
+
 ]
 // ── Main Hero ────────────────────────────────────────────────
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Subtle background blobs */}
-    {/* Background Decorations */}
-<div className="pointer-events-none absolute inset-0 overflow-hidden">
-  {/* Top-right blue glow */}
-  <div className="absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full bg-blue-50 blur-3xl opacity-80" />
+      {/* Background Decorations */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Top-right blue glow */}
+        <div className="absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full bg-white blur-3xl opacity-80" />
 
-  {/* Center soft glow behind illustration */}
-  <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/30 blur-3xl" />
-</div>
+        {/* Center soft glow behind illustration */}
+        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/30 blur-3xl" />
+      </div>
 
       <Container className="relative">
         <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-12 pt-10 pb-4 lg:pt-14 lg:pb-0">
@@ -250,27 +250,27 @@ export default function Hero() {
               </span>
             </motion.div>
 
-           {/* Headline */}
-<motion.h1
-  variants={fadeUp}
-  className="mb-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-4xl xl:text-5xl"
->
-  Best Training Institute for
-  <span className="block text-[#0769B4]">
-    SAP, AI & Data Science
-  </span>
-</motion.h1>
+            {/* Headline */}
+            <motion.h1
+              variants={fadeUp}
+              className="mb-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-4xl xl:text-5xl"
+            >
+              Best Training Institute for
+              <span className="block text-[#0769B4]">
+                SAP, AI & Data Science
+              </span>
+            </motion.h1>
 
-{/* Sub-copy */}
-<motion.p
-  variants={fadeUp}
-  className="mx-auto mb-7 max-w-xl text-sm leading-7 text-slate-500 sm:text-base lg:mx-0"
->
-  Master SAP, Artificial Intelligence, Data Science, Corporate Training,
-  and industry-focused workshops through live instructor-led sessions,
-  hands-on projects, certification guidance, and dedicated placement
-  assistance.
-</motion.p>
+            {/* Sub-copy */}
+            <motion.p
+              variants={fadeUp}
+              className="mx-auto mb-7 max-w-xl text-sm leading-7 text-slate-500 sm:text-base lg:mx-0"
+            >
+              Master SAP, Artificial Intelligence, Data Science, Corporate Training,
+              and industry-focused workshops through live instructor-led sessions,
+              hands-on projects, certification guidance, and dedicated placement
+              assistance.
+            </motion.p>
 
             {/* CTA buttons */}
             <motion.div
@@ -278,20 +278,20 @@ export default function Hero() {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6"
             >
               <Link
-  href="/courses"
-  className="inline-flex items-center gap-2 bg-[#0769B4] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#055A99] hover:shadow-lg hover:shadow-[#123498]/30"
->
-  <BookOpen size={15} />
-  Explore Courses
-  <ArrowRight size={14} />
-</Link>
-           <Link
-  href="/contact"
-  className="inline-flex items-center gap-2 border-2 border-[#0769B4] px-5 py-3 text-sm font-semibold text-[#0769B4] transition-all duration-300 hover:border-[#0F2E88] hover:text-[#0F2E88]"
->
-  <Calendar size={14} />
-  Book a Consultation
-</Link>
+                href="/courses"
+                className="inline-flex items-center gap-2 bg-[#0769B4] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#055A99] hover:shadow-lg hover:shadow-[#123498]/30"
+              >
+                <BookOpen size={15} />
+                Explore Courses
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 border-2 border-[#0769B4] px-5 py-3 text-sm font-semibold text-[#0769B4] transition-all duration-300 hover:border-[#0F2E88] hover:text-[#0F2E88]"
+              >
+                <Calendar size={14} />
+                Book a Consultation
+              </Link>
             </motion.div>
 
             {/* Feature checkmarks */}
@@ -396,38 +396,38 @@ export default function Hero() {
         </div>
       </Container>
 
-  {/* ── SAP Technologies ─────────────────────────────────── */}
-<motion.div
-  variants={fadeIn}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="mt-8 border-y border-slate-100 bg-slate-50 py-8"
->
-  <Container>
-    <div className="text-center">
-      <p className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-[#0769B4]">
-        Trusted Technologies & Industry Platforms
-      </p>
+      {/* ── SAP Technologies ─────────────────────────────────── */}
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mt-8 border-y border-slate-100 bg-slate-50 py-8"
+      >
+        <Container>
+          <div className="text-center">
+            <p className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-[#0769B4]">
+              Trusted Technologies & Industry Platforms
+            </p>
 
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        {sapPartners.map((partner) => (
-          <div
-            key={partner.name}
-            className="flex h-16 min-w-[170px] items-center justify-center rounded-lg border border-slate-200 bg-white px-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
-          >
-            <span
-              className="text-lg font-bold tracking-wide"
-              style={{ color: partner.color }}
-            >
-              {partner.logo}
-            </span>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {sapPartners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="flex h-16 min-w-[170px] items-center justify-center rounded-lg border border-slate-200 bg-white px-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
+                >
+                  <span
+                    className="text-lg font-bold tracking-wide"
+                    style={{ color: partner.color }}
+                  >
+                    {partner.logo}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </Container>
-</motion.div>
+        </Container>
+      </motion.div>
     </section>
   )
 }
