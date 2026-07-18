@@ -10,32 +10,41 @@ const socialIcons: Record<string, React.ElementType> = {
   youtube: Youtube,
 }
 
-export default function TopBar() {
+interface TopBarProps {
+  onEnquiryClick?: () => void; // Added prop to handle opening the popup
+}
+
+export default function TopBar({ onEnquiryClick }: TopBarProps) {
   return (
     <div className="hidden md:block bg-[#0769B4] text-white">
-      <div className="mx-auto max-w-7xl px-8 sm:px-6 lg:px-10 py-1">
-        <div className="flex items-center justify-between h-9 text-s">
+      {/* Increased padding from py-1 to py-2 for a larger feel */}
+      <div className="mx-auto max-w-7xl px-8 sm:px-6 lg:px-10 py-2">
+        {/* Bumped text size from text-s to text-sm and removed restrictive h-9 */}
+        <div className="flex items-center justify-between text-sm">
+
           {/* Left: phone + email */}
-          <div className="flex items-center gap-5">
+          {/* Increased spacing gap-5 to gap-6 and icon size to 15 */}
+          <div className="flex items-center gap-6">
             <a
               href={`tel:${contactInfo.phone}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
             >
-              <Phone size={12} />
+              <Phone size={15} />
               {contactInfo.displayPhone}
             </a>
             <a
               href={`mailto:${contactInfo.email}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
             >
-              <Mail size={12} />
+              <Mail size={15} />
               {contactInfo.email}
             </a>
           </div>
 
           {/* Right: socials + enquiry */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center gap-6">
+            {/* Changed social icon base color from text-slate-400 to text-white/80 and icon size to 16 */}
+            <div className="flex items-center gap-4">
               {socialMediaList.map((s) => {
                 const Icon = socialIcons[s.icon]
                 return (
@@ -45,20 +54,24 @@ export default function TopBar() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={s.id}
-                    className="text-slate-400 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors"
                   >
-                    {Icon && <Icon size={13} />}
+                    {Icon && <Icon size={16} />}
                   </a>
                 )
               })}
             </div>
-            <a
-              href="/contact"
-              className="border border-white hover:border-blue-400 hover:text-blue-400 text-white rounded-md px-3 py-1 text-[11px] font-medium transition-colors"
+
+            {/* Changed from an <a> tag to a <button> and hooked up the click handler */}
+            {/* Increased text size from text-[11px] to text-xs and adjusted padding */}
+            <button
+              onClick={onEnquiryClick}
+              className="border border-white hover:bg-white hover:text-[#0769B4] text-white rounded-md px-4 py-1.5 text-xs font-semibold transition-colors"
             >
               Enquiry
-            </a>
+            </button>
           </div>
+
         </div>
       </div>
     </div>
