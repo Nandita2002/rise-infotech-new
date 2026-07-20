@@ -10,10 +10,7 @@ import { cn } from '@/lib/utils'
 import { ChevronDown } from 'lucide-react'
 
 import AdmissionPopupComponent from "@/components/popup/AdmissionPopup";
-const AdmissionPopup = AdmissionPopupComponent as ComponentType<{
-  open: boolean
-  onClose: () => void
-}>
+
 
 const sapCourses = [
   { name: "SAP MM", href: "/courses/sap-mm" },
@@ -186,10 +183,7 @@ export default function Navbar() {
                 📅 Free Consultation
               </button>
 
-              <AdmissionPopup
-                open={showPopup}
-                onClose={() => setShowPopup(false)}
-              />
+
 
               {/* Mobile Hamburger */}
               <button

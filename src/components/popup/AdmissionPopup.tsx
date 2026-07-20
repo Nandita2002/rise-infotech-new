@@ -6,9 +6,9 @@ import { useEffect, useState } from "react"
 import { X, CheckCircle2, AlertTriangle } from 'lucide-react'
 import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 
-interface AdmissionPopupProps {
-  open?: boolean      // Made optional
-  onClose?: () => void // Made optional
+type AdmissionPopupProps = {
+  open?: boolean
+  onClose?: () => void
 }
 
 export default function AdmissionPopup({ open = false, onClose = () => { } }: AdmissionPopupProps) {
@@ -91,29 +91,29 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
       {/* Popup Overlay */}
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs animate-fade-in">
         {/* Popup Card */}
-        <div className="relative w-full max-w-md rounded-3xl bg-white shadow-2xl overflow-hidden transform transition-all duration-300 scale-100">
+        <div className="relative w-[92vw] max-w-md max-h-[92vh] overflow-y-auto rounded-2xl bg-white shadow-2xl">
 
           {/* Close Button */}
           <button
             onClick={handleClose}
-            className="absolute right-5 top-5 p-1.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors cursor-pointer"
+            className="absolute right-3 top-3"
             aria-label="Close modal"
           >
             <X size={20} />
           </button>
 
           {/* Header */}
-          <div className="bg-[#0769B4] px-6 py-6 text-center">
-            <h2 className="text-3xl font-extrabold text-white tracking-tight">
+          <div className="bg-[#0769B4] px-5 py-4 text-center sm:px-6 sm:py-6">
+            <h2 className="text-2xl font-bold sm:text-3xl text-white">
               Book a Free Consultation
             </h2>
-            <p className="mt-2 text-blue-100 text-sm sm:text-base">
+            <p className="mt-1 text-xs leading-5 text-blue-100 sm:text-sm">
               Talk to our SAP career counsellor and find the right course for you.
             </p>
           </div>
 
           {/* Form Content */}
-          <div className="p-5 sm:p-6">
+          <div className="p-4 sm:p-6">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <input
@@ -122,7 +122,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
                   onChange={handleChange}
                   required
                   placeholder="Your Name"
-                  className="rounded-xl border border-slate-200 px-4 py-3 text-slate-800 placeholder-slate-400 focus:border-[#0769B4] focus:ring-2 focus:ring-[#0769B4]/20 outline-none transition-all"
+                  className="rounded-xl border border-slate-200 px-4 py-2.5 text-slate-800 placeholder-slate-400 focus:border-[#0769B4] focus:ring-2 focus:ring-[#0769B4]/20 outline-none transition-all"
                 />
 
                 <input
@@ -175,7 +175,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
               </select>
 
               <textarea
-                rows={3}
+                rows={2}
                 name="message"
                 value={form.message}
                 onChange={handleChange}
@@ -203,7 +203,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
             </form>
 
             {/* Footer */}
-            <div className="mt-6 border-t border-slate-200 pt-4 text-center">
+            <div className="mt-4 border-t border-slate-200 pt-3">
               <p className="text-xs text-slate-500 mb-3">
                 Follow Rise Infotech
               </p>
@@ -215,7 +215,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
                   href="https://www.instagram.com/rise_infotech/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 transition hover:scale-105"
+                  className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 transition hover:scale-105"
                 >
                   <FaInstagram size={16} className="text-white" />
                 </a>
@@ -225,7 +225,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
                   href="https://www.facebook.com/people/Rise-Infotech/100089059015353/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#1877F2] transition hover:scale-105"
+                  className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg bg-[#1877F2] transition hover:scale-105"
                 >
                   <FaFacebookF size={16} className="text-white" />
                 </a>
@@ -235,7 +235,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
                   href="https://x.com/RiseInfotech"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-black transition hover:scale-105"
+                  className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg bg-black transition hover:scale-105"
                 >
                   <FaTwitter size={16} className="text-white" />
                 </a>
@@ -245,7 +245,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
                   href="https://www.linkedin.com/company/rise-infotech/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#0A66C2] transition hover:scale-105"
+                  className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg bg-[#0A66C2] transition hover:scale-105"
                 >
                   <FaLinkedinIn size={16} className="text-white" />
                 </a>
@@ -255,7 +255,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
                   href="https://www.youtube.com/@rise_infotech"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#FF0000] transition hover:scale-105"
+                  className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg bg-[#FF0000] transition hover:scale-105"
                 >
                   <FaYoutube size={16} className="text-white" />
                 </a>

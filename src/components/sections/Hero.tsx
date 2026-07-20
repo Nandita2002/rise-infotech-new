@@ -46,7 +46,9 @@ function FeaturePill({
       initial="hidden"
       animate="visible"
       transition={{ delay }}
-      className={`absolute bg-white rounded-2xl shadow-xl border border-slate-100 p-3 flex items-center gap-2.5 w-44 z-20 ${className}`}
+      // Hidden on mobile/small tablets to avoid overlap with the hero image;
+      // reappears as a flex row from md breakpoint up.
+      className={`hidden md:flex absolute bg-white rounded-2xl shadow-xl border border-slate-100 p-3 items-center gap-2.5 w-44 z-20 ${className}`}
     >
       <div className={`${iconBg} rounded-xl p-2 flex-shrink-0`}>{icon}</div>
       <div>
@@ -66,7 +68,7 @@ interface StatBadgeProps {
 
 function StatBadge({ value, label, color = 'text-blue-600' }: StatBadgeProps) {
   return (
-    <div className="text-center">
+    <div className="text-center min-w-[80px] sm:min-w-0">
       <p className={`text-xl sm:text-2xl font-extrabold ${color}`}>{value}</p>
       <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium mt-0.5 whitespace-nowrap">{label}</p>
     </div>
@@ -252,11 +254,13 @@ export default function Hero() {
 
 
             {/* heading */}
+            {/* Fixed: previously "text-2xl sm:text-2xl lg:text-4xl" never actually scaled up
+                between mobile and small screens. Now scales smoothly mobile -> xl. */}
             <motion.h1
               variants={fadeUp}
               className="max-w-3xl font-extrabold tracking-tight
-             leading-[1.1]
-             text-2xl sm:text-2xl lg:text-4xl
+             leading-[1.15] sm:leading-[1.1]
+             text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl
              text-slate-900"
             >
               Bengaluru's Best
@@ -314,12 +318,14 @@ export default function Hero() {
             </motion.div>
 
             {/* Stats */}
+            {/* Fixed: wraps into two rows on very small screens instead of squeezing/overflowing.
+                Dividers are hidden below sm since they look broken once the row wraps. */}
             <motion.div variants={fadeUp} className="flex justify-center lg:justify-start">
-              <div className="flex items-center gap-4 sm:gap-8 bg-white border border-slate-100 rounded-2xl px-4 sm:px-7 py-4 shadow-sm">
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3 sm:gap-x-8 bg-white border border-slate-100 rounded-2xl px-4 sm:px-7 py-4 shadow-sm">
                 <StatBadge value="10+" label="Years of Excellence" color="text-slate-800" />
-                <div className="w-px h-10 bg-slate-100 flex-shrink-0" />
+                <div className="hidden sm:block w-px h-10 bg-slate-100 flex-shrink-0" />
                 <StatBadge value="5000+" label="Students Trained" color="text-blue-600" />
-                <div className="w-px h-10 bg-slate-100 flex-shrink-0" />
+                <div className="hidden sm:block w-px h-10 bg-slate-100 flex-shrink-0" />
                 <StatBadge value="30+" label="SAP Modules" color="text-slate-800" />
               </div>
             </motion.div>
@@ -330,7 +336,7 @@ export default function Hero() {
             variants={slideInRight}
             initial="hidden"
             animate="visible"
-            className="flex-1 relative flex items-center justify-center w-full min-h-[420px] lg:min-h-[540px]"
+            className="flex-1 relative flex items-center justify-center w-full min-h-[320px] sm:min-h-[420px] lg:min-h-[540px]"
           >
             {/* Animated network background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -338,13 +344,13 @@ export default function Hero() {
             </div>
 
             {/* Soft blue circle behind student */}
-            <div className="absolute w-[280px] h-[280px] lg:w-[380px] lg:h-[380px] bg-gradient-to-br from-blue-100/80 to-blue-50/60 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px] bg-gradient-to-br from-blue-100/80 to-blue-50/60 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
             {/* Paper plane */}
             <motion.div
               animate={{ x: [0, 10, 0], y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-6 right-16 lg:right-20 z-10"
+              className="hidden sm:block absolute top-6 right-16 lg:right-20 z-10"
             >
               <svg width="30" height="30" viewBox="0 0 36 36" fill="none">
                 <path d="M33 3L16.5 19.5M33 3L22.5 33L16.5 19.5M33 3L3 13.5L16.5 19.5"
@@ -359,12 +365,12 @@ export default function Hero() {
                 alt="SAP student learning on laptop"
                 width={520}
                 height={480}
-                className="w-[260px] sm:w-[340px] lg:w-[420px] xl:w-[480px] h-auto object-contain drop-shadow-2xl"
+                className="w-[220px] sm:w-[280px] md:w-[340px] lg:w-[420px] xl:w-[480px] h-auto object-contain drop-shadow-2xl"
                 priority
               />
             </motion.div>
 
-            {/* Floating cards */}
+            {/* Floating cards — hidden below md, shown from tablet up (see FeaturePill) */}
             <FeaturePill
               icon={<Monitor size={14} className="text-blue-600" />}
               title="Live Projects"
@@ -420,10 +426,10 @@ export default function Hero() {
               {sapPartners.map((partner) => (
                 <div
                   key={partner.name}
-                  className="flex h-16 min-w-[170px] items-center justify-center rounded-lg border border-slate-200 bg-white px-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
+                  className="flex h-16 min-w-[140px] sm:min-w-[170px] items-center justify-center rounded-lg border border-slate-200 bg-white px-4 sm:px-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-lg"
                 >
                   <span
-                    className="text-lg font-bold tracking-wide"
+                    className="text-base sm:text-lg font-bold tracking-wide"
                     style={{ color: partner.color }}
                   >
                     {partner.logo}
