@@ -10,6 +10,7 @@ import FAQ from '@/components/sections/FAQ'
 import Contact from '@/components/sections/Contact'
 import Achievements from '@/components/sections/Achievements'
 import AdmissionPopup from '@/components/popup/AdmissionPopup'
+import TopBanner from '@/components/TopBanner'
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false)
@@ -20,6 +21,7 @@ export default function Home() {
         open={showPopup}
         onClose={() => setShowPopup(false)}
       />
+      <TopBanner />
       <Hero onOpenPopup={() => setShowPopup(true)} />
 
       <Achievements />
