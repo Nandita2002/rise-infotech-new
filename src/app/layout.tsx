@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-white text-slate-900 antialiased">
         <Navbar />
 
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-20">
           {children}
         </main>
 

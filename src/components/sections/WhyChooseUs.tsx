@@ -4,15 +4,15 @@ import Container from '@/components/ui/Container'
 import FeatureCard from '@/components/ui/FeatureCard'
 import {
   Award,
- 
+
   Briefcase,
   Building2,
- 
+
   GraduationCap,
   Laptop,
 
   Users,
-    Target,
+  Target,
   Eye,
 } from 'lucide-react'
 
@@ -34,74 +34,74 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-[#F9FAFB] py-12 lg:py-16">
 
-  {/* Heading */}
-  <div className="mb-10 bg-[#0769B4] px-8 py-10 text-center shadow-lg">
+      {/* Heading */}
+      <div className="mb-10 bg-[#0769B4] px-8 py-10 text-center shadow-lg">
 
-    <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-bold tracking-[0.25em] text-white backdrop-blur-sm">
-      Why Choose Us
-    </span>
+        <span className="inline-flex items-center  border border-white/20 bg-white/10 px-5 py-2 text-xs font-bold tracking-[0.25em] text-white backdrop-blur-sm">
+          Why Choose Us
+        </span>
 
-    <h2 className="mt-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
-      Why Thousands Choose Rise Infotech
-    </h2>
+        <h2 className="mt-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+          Why Thousands Choose Rise Infotech
+        </h2>
 
-    <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-blue-100">
-      We combine practical industry knowledge with personalized mentoring to
-      help learners become confident professionals.
-    </p>
+        <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-blue-100">
+          We combine practical industry knowledge with personalized mentoring to
+          help learners become confident professionals.
+        </p>
 
-  </div>
+      </div>
 
-  <Container>
+      <Container>
 
-    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 
-      <FeatureCard
-        icon={GraduationCap}
-        title="Industry Expert Trainers"
-        description="Learn from certified SAP consultants and experienced professionals with real implementation expertise."
-        color="blue"
-      />
+          <FeatureCard
+            icon={GraduationCap}
+            title="Industry Expert Trainers"
+            description="Learn from certified SAP consultants and experienced professionals with real implementation expertise."
+            color="blue"
+          />
 
-      <FeatureCard
-        icon={Laptop}
-        title="Hands-on Live Projects"
-        description="Gain practical exposure by working on industry-oriented assignments and real-time business scenarios."
-        color="green"
-      />
+          <FeatureCard
+            icon={Laptop}
+            title="Hands-on Live Projects"
+            description="Gain practical exposure by working on industry-oriented assignments and real-time business scenarios."
+            color="green"
+          />
 
-      <FeatureCard
-        icon={Briefcase}
-        title="Placement Assistance"
-        description="Resume building, mock interviews and career guidance to help you secure the right opportunity."
-        color="orange"
-      />
+          <FeatureCard
+            icon={Briefcase}
+            title="Placement Assistance"
+            description="Resume building, mock interviews and career guidance to help you secure the right opportunity."
+            color="orange"
+          />
 
-      <FeatureCard
-        icon={Building2}
-        title="Corporate Training"
-        description="Customized SAP and Analytics training solutions designed specifically for organizations."
-        color="purple"
-      />
+          <FeatureCard
+            icon={Building2}
+            title="Corporate Training"
+            description="Customized SAP and Analytics training solutions designed specifically for organizations."
+            color="purple"
+          />
 
-      <FeatureCard
-        icon={Award}
-        title="Certification Guidance"
-        description="Complete guidance for SAP certification preparation with expert mentoring and practice sessions."
-        color="blue"
-      />
+          <FeatureCard
+            icon={Award}
+            title="Certification Guidance"
+            description="Complete guidance for SAP certification preparation with expert mentoring and practice sessions."
+            color="blue"
+          />
 
-      <FeatureCard
-        icon={Users}
-        title="Internship Programs"
-        description="Industry internships and project-based learning to gain practical experience before entering the workforce."
-        color="green"
-      />
+          <FeatureCard
+            icon={Users}
+            title="Internship Programs"
+            description="Industry internships and project-based learning to gain practical experience before entering the workforce."
+            color="green"
+          />
 
-    </div>
+        </div>
 
-  </Container>
+      </Container>
 
-</section>
+    </section>
   )
 }

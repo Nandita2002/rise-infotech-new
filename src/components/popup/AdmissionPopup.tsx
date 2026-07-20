@@ -4,6 +4,7 @@ import type { ContactFormData } from '@/types'
 import emailjs from "@emailjs/browser"
 import { useEffect, useState } from "react"
 import { X, CheckCircle2, AlertTriangle } from 'lucide-react'
+import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 
 interface AdmissionPopupProps {
   open?: boolean      // Made optional
@@ -90,7 +91,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
       {/* Popup Overlay */}
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs animate-fade-in">
         {/* Popup Card */}
-        <div className="relative w-full max-w-2xl rounded-3xl bg-white shadow-2xl overflow-hidden transform transition-all duration-300 scale-100">
+        <div className="relative w-full max-w-md rounded-3xl bg-white shadow-2xl overflow-hidden transform transition-all duration-300 scale-100">
 
           {/* Close Button */}
           <button
@@ -102,7 +103,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
           </button>
 
           {/* Header */}
-          <div className="bg-[#0769B4] px-8 py-8 text-center select-none">
+          <div className="bg-[#0769B4] px-6 py-6 text-center">
             <h2 className="text-3xl font-extrabold text-white tracking-tight">
               Book a Free Consultation
             </h2>
@@ -112,7 +113,7 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
           </div>
 
           {/* Form Content */}
-          <div className="p-6 sm:p-8">
+          <div className="p-5 sm:p-6">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <input
@@ -200,6 +201,67 @@ export default function AdmissionPopup({ open = false, onClose = () => { } }: Ad
                 )}
               </button>
             </form>
+
+            {/* Footer */}
+            <div className="mt-6 border-t border-slate-200 pt-4 text-center">
+              <p className="text-xs text-slate-500 mb-3">
+                Follow Rise Infotech
+              </p>
+
+              <div className="flex justify-center gap-2">
+
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/rise_infotech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 transition hover:scale-105"
+                >
+                  <FaInstagram size={16} className="text-white" />
+                </a>
+
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/people/Rise-Infotech/100089059015353/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#1877F2] transition hover:scale-105"
+                >
+                  <FaFacebookF size={16} className="text-white" />
+                </a>
+
+                {/* X */}
+                <a
+                  href="https://x.com/RiseInfotech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-black transition hover:scale-105"
+                >
+                  <FaTwitter size={16} className="text-white" />
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/rise-infotech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#0A66C2] transition hover:scale-105"
+                >
+                  <FaLinkedinIn size={16} className="text-white" />
+                </a>
+
+                {/* YouTube */}
+                <a
+                  href="https://www.youtube.com/@rise_infotech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#FF0000] transition hover:scale-105"
+                >
+                  <FaYoutube size={16} className="text-white" />
+                </a>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>

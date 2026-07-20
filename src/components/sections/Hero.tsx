@@ -250,26 +250,32 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* Headline */}
+
+            {/* heading */}
             <motion.h1
               variants={fadeUp}
-              className="mb-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-4xl xl:text-5xl"
+              className="max-w-3xl font-extrabold tracking-tight
+             leading-[1.1]
+             text-2xl sm:text-2xl lg:text-4xl
+             text-slate-900"
             >
-              Best Training Institute for
-              <span className="block text-[#0769B4]">
-                SAP, AI & Data Science
+              Bengaluru's Best
+              <br />
+              Software Training Institute
+              <span className="mt-2 block text-[#0769B4]">
+                for SAP S/4HANA, AI & Data Science
               </span>
             </motion.h1>
 
             {/* Sub-copy */}
             <motion.p
               variants={fadeUp}
-              className="mx-auto mb-7 max-w-xl text-sm leading-7 text-slate-500 sm:text-base lg:mx-0"
+              className="mx-auto mb-7 mt-3 max-w-xl text-sm leading-7 text-black sm:text-base lg:mx-0"
             >
-              Master SAP, Artificial Intelligence, Data Science, Corporate Training,
-              and industry-focused workshops through live instructor-led sessions,
-              hands-on projects, certification guidance, and dedicated placement
-              assistance.
+              Build job-ready skills with industry-focused training, real-time projects, expert guidance, and dedicated placement support. Learn from experienced trainers and gain practical knowledge to confidently grow your career.
+              <p>
+                At Rise Infotech, we don’t just train — we build the skills, confidence, and career readiness you need to succeed in today’s competitive IT industry.
+              </p>
             </motion.p>
 
             {/* CTA buttons */}

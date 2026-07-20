@@ -59,10 +59,10 @@ export default function Navbar() {
 
       <header
         className={cn(
-          'sticky top-0 z-40 w-full transition-all duration-300',
+          "fixed inset-x-0 top-0 z-50 w-full transition-all duration-300",
           scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100'
-            : 'bg-white border-b border-slate-100',
+            ? "bg-white/90 backdrop-blur-lg shadow-lg border-b border-slate-200"
+            : "bg-white/95 border-b border-transparent"
         )}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -159,6 +159,14 @@ export default function Navbar() {
                 className="text-[15px] font-medium text-slate-700 transition-colors hover:text-[#0769B4]"
               >
                 Corporate Training
+              </Link>
+
+
+              <Link
+                href="/success-stories"
+                className="text-[15px] font-medium text-slate-700 transition-colors hover:text-[#0769B4]"
+              >
+                Testimonials
               </Link>
 
               <Link

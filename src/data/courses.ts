@@ -39,8 +39,8 @@ export const courses: Course[] = [
   title: "SAP MM",
   subtitle: "Materials Management",
 
-  bannerImage: "/sapmm.png",
-  overviewImage: "/sapmm.png",
+  bannerImage: "/courses/MM.jpg",
+  overviewImage: "/courses/MM.jpg",
 
   description:
     "SAP MM covers the procurement and materials lifecycle inside SAP from purchase requisitions to invoice verification and inventory management.",
@@ -97,8 +97,8 @@ export const courses: Course[] = [
   title: "SAP SD",
   subtitle: "SAP S/4HANA Sales & Distribution",
 
-  bannerImage: "/sapsd.png",
-  overviewImage: "/sapsd.png",
+  bannerImage: "/courses/SD.jpg",
+  overviewImage: "/courses/SD.jpg",
 
   description:
     "SAP Sales and Distribution (SAP SD) is a core functional module in SAP ERP that manages the complete Order-to-Cash (OTC) process, including sales order processing, shipping, billing, pricing, and customer management. This course provides comprehensive training in SAP S/4HANA Sales with hands-on configuration, real-time business scenarios, implementation concepts, and project-based learning to prepare learners for successful SAP careers.",
@@ -219,8 +219,8 @@ export const courses: Course[] = [
   title: "SAP FICO",
   subtitle: "SAP S/4HANA Finance",
 
-  bannerImage: "/sapfico.png",
-  overviewImage: "/sapfico.png",
+  bannerImage: "/courses/FICO.jpg",
+  overviewImage: "/courses/FICO.jpg",
 
   description:
     "SAP FICO (Financial Accounting & Controlling) is one of the most widely used functional modules in SAP ERP, enabling organizations to manage financial accounting, reporting, budgeting, cost control, and profitability analysis. This course covers SAP S/4HANA Finance with practical configuration, real-time business scenarios, implementation methodology, and project-based learning to prepare learners for finance and SAP consulting careers.",
@@ -347,8 +347,8 @@ export const courses: Course[] = [
   title: "SAP EWM",
   subtitle: "SAP S/4HANA Extended Warehouse Management",
 
-  bannerImage: "/sapewm.png",
-  overviewImage: "/sapewm.png",
+  bannerImage: "/courses/EWM.jpg",
+  overviewImage: "/courses/EWM.jpg",
 
   description:
     "SAP Extended Warehouse Management (SAP EWM) is an advanced warehouse management solution within SAP S/4HANA that helps organizations optimize warehouse operations, inventory management, inbound and outbound logistics, and supply chain processes. This course provides hands-on training in SAP EWM with real-time business scenarios, warehouse configuration, implementation methodology, and project-based learning to prepare learners for careers in warehouse and supply chain management.",
@@ -465,8 +465,8 @@ export const courses: Course[] = [
   title: "SAP PP",
   subtitle: "SAP S/4HANA Production Planning",
 
-  bannerImage: "/sappp.png",
-  overviewImage: "/sappp.png",
+  bannerImage: "/courses/pp.jpg",
+  overviewImage: "/courses/pp.jpg",
 
   description:
     "SAP Production Planning (SAP PP) is a core module in SAP S/4HANA that enables organizations to efficiently plan, schedule, execute, and monitor manufacturing operations. It integrates production planning with inventory, procurement, sales, and quality management to optimize manufacturing processes and resource utilization. This course provides hands-on training in SAP PP through real-time business scenarios, configuration, implementation concepts, and project-based learning.",
@@ -598,8 +598,8 @@ export const courses: Course[] = [
   title: "SAP QM",
   subtitle: "SAP S/4HANA Quality Management",
 
-  bannerImage: "/sapqm.png",
-  overviewImage: "/sapqm.png",
+  bannerImage: "/courses/QM.jpg",
+  overviewImage: "/courses/QM.jpg",
 
   description:
     "SAP Quality Management (SAP QM) is a core module in SAP S/4HANA that enables organizations to plan, monitor, inspect, and improve product quality throughout the manufacturing and supply chain lifecycle. It integrates seamlessly with procurement, production, inventory, sales, and maintenance processes to ensure products meet quality standards and regulatory requirements. This course provides practical training in SAP QM through real-time business scenarios, configuration, implementation concepts, and project-based learning.",
@@ -728,8 +728,8 @@ export const courses: Course[] = [
   title: "SAP PM",
   subtitle: "SAP S/4HANA Plant Maintenance",
 
-  bannerImage: "/sappm.png",
-  overviewImage: "/sappm.png",
+  bannerImage: "/courses/PM.jpg",
+  overviewImage: "/courses/PM.jpg",
 
   description:
     "SAP Plant Maintenance (SAP PM) is a core module in SAP S/4HANA that enables organizations to efficiently manage maintenance activities for equipment, machinery, and technical assets. It supports preventive, corrective, and breakdown maintenance while improving asset reliability, minimizing downtime, and optimizing maintenance costs. This course provides practical training in SAP PM through real-time business scenarios, configuration, implementation concepts, and project-based learning.",
@@ -859,8 +859,8 @@ export const courses: Course[] = [
   title: "SAP ABAP",
   subtitle: "Advanced Business Application Programming",
 
-  bannerImage: "/sapabap.png",
-  overviewImage: "/sapabap.png",
+  bannerImage: "/courses/ABAP.jpg",
+  overviewImage: "/courses/ABAP.jpg",
 
   description:
     "SAP ABAP (Advanced Business Application Programming) is SAP's proprietary programming language used to develop, customize, and extend SAP applications. It enables developers to create reports, interfaces, enhancements, forms, workflows, and business applications across SAP ERP and SAP S/4HANA systems. This course provides practical hands-on training in ABAP development with real-world programming scenarios, debugging techniques, and implementation projects.",
@@ -979,8 +979,8 @@ export const courses: Course[] = [
   title: "SAP BASIS",
   subtitle: "Business Application Software Integrated Solution",
 
-  bannerImage: "/sapbasis.png",
-  overviewImage: "/sapbasis.png",
+  bannerImage: "/courses/BASIS.jpg",
+  overviewImage: "/courses/BASIS.jpg",
 
   description:
     "SAP BASIS is the technical foundation of SAP systems responsible for installation, configuration, administration, monitoring, security, upgrades, and performance optimization. It enables SAP applications to run efficiently while ensuring system availability, scalability, and reliability. This course provides practical training in SAP BASIS administration using real-world system management scenarios and implementation projects.",
@@ -1093,8 +1093,8 @@ export const courses: Course[] = [
   title: "SAP BTP",
   subtitle: "SAP Business Technology Platform",
 
-  bannerImage: "/sapbtp.png",
-  overviewImage: "/sapbtp.png",
+  bannerImage: "/courses/BTP.jpg",
+  overviewImage: "/courses/BTP.jpg",
 
   description:
     "SAP Business Technology Platform (SAP BTP) is SAP's cloud platform that enables organizations to build, integrate, extend, and innovate business applications. It combines application development, database and data management, analytics, AI, automation, and integration services into a unified platform. This course provides hands-on training in SAP BTP using real-world business scenarios, cloud-native development, integrations, and enterprise implementation projects.",
