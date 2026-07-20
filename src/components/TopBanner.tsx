@@ -9,7 +9,7 @@ const TopBanner: React.FC = () => {
         {[...Array(4)].map((_, i) => (
           <div key={i} className="flex gap-10 px-6 whitespace-nowrap">
             <span className="font-semibold text-white">
-              Admissions Open for July 2026 Batch
+              Admissions Open for August 2026 Batch
             </span>
             <span className="text-blue-100/95">
               Get up to 25% Special offer on{" "}
