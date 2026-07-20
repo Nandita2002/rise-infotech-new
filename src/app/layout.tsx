@@ -3,6 +3,10 @@ import './globals.css'
 
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import WhatsAppButton from "@/components/sections/WhatsappButton";
+import Script from 'next/script';
+
+
 
 export const metadata: Metadata = {
   title: 'Rise Infotech – Build Your SAP Career with Industry Experts',
@@ -31,11 +35,32 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-white text-slate-900 antialiased">
+
+        {/* Zoho SalesIQ */}
+        <Script id="zoho-salesiq-init" strategy="afterInteractive">
+          {`
+      window.$zoho = window.$zoho || {};
+      window.$zoho.salesiq = window.$zoho.salesiq || {
+        ready: function () {}
+      };
+    `}
+        </Script>
+
+        <Script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.com/widget?wc=siqa90ba803a545748bfafab418dfca61789d44211cec6e926ecdb24af08108e649"
+          strategy="afterInteractive"
+        />
+
         <Navbar />
+
 
         <main className="min-h-screen pt-20">
           {children}
         </main>
+
+        {/* Floating WhatsApp Button */}
+        <WhatsAppButton />
 
         <Footer />
       </body>

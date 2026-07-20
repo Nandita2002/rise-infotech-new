@@ -31,7 +31,6 @@ interface FeaturePillProps {
   delay?: number
   iconBg?: string
 }
-
 function FeaturePill({
   icon,
   title,
@@ -218,7 +217,11 @@ const sapPartners = [
 
 ]
 // ── Main Hero ────────────────────────────────────────────────
-export default function Hero() {
+interface HeroProps {
+  onOpenPopup: () => void;
+}
+
+export default function Hero({ onOpenPopup }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Subtle background blobs */}
@@ -295,13 +298,13 @@ export default function Hero() {
                 Explore Courses
                 <ArrowRight size={14} />
               </Link>
-              <Link
-                href="/contact"
+              <button
+                onClick={onOpenPopup}
                 className="inline-flex items-center gap-2 border-2 border-[#0769B4] px-5 py-3 text-sm font-semibold text-[#0769B4] transition-all duration-300 hover:border-[#0F2E88] hover:text-[#0F2E88]"
               >
                 <Calendar size={14} />
                 Book a Consultation
-              </Link>
+              </button>
             </motion.div>
 
             {/* Feature checkmarks */}

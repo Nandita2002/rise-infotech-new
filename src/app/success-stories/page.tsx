@@ -1,6 +1,5 @@
 
 import TestimonialsGrid from "@/components/testimonials/TestimonialsGrid";
-import Achievements from "@/components/sections/Achievements";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 

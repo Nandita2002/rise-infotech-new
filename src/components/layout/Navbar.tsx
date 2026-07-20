@@ -52,11 +52,11 @@ export default function Navbar() {
 
   return (
     <>
-      <TopBar />
+
 
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 w-full transition-all duration-300",
+          "fixed  inset-x-0 z-50 w-full transition-all duration-300",
           scrolled
             ? "bg-white/90 backdrop-blur-lg shadow-lg border-b border-slate-200"
             : "bg-white/95 border-b border-transparent"

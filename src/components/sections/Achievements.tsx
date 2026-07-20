@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { StudentList } from "@/data/testimonial";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Achievements() {
   // Remove duplicate companies
@@ -17,20 +19,13 @@ export default function Achievements() {
       {/* Heading */}
       <div className="mb-12 bg-[#0769B4] px-8 py-10 text-center shadow-xl lg:px-16">
         <span className="inline-flex items-center  border border-white/20 bg-white/10 px-5 py-2 text-xs font-bold tracking-[0.25em] text-white backdrop-blur-sm">
-          Our Achievements
+          Where Our Students Work
         </span>
-
-        <h2 className="mt-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
-          Trusted by Leading Companies
-        </h2>
-
         <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-blue-100">
-          Our learners have transformed their careers and are now working
-          with some of the world's leading organizations.
+          Our learners are building successful careers at leading companies across the IT industry.
         </p>
       </div>
       <div className="mx-auto max-w-7xl px-6">
-
 
 
         {/* Running Banner */}
@@ -73,46 +68,21 @@ export default function Achievements() {
           ))}
         </Marquee>
 
-        {/* Stats */}
-        {/* <div className="mt-20 grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="mt-4 text-center">
+          <p className="text-gray-600">
+            Hear directly from our students about their learning journey and career success.
+          </p>
 
-          <div className="rounded-2xl bg-slate-50 p-8 text-center">
-            <h3 className="text-4xl font-bold text-[#0769B4]">
-              5000+
-            </h3>
-            <p className="mt-2 text-slate-600">
-              Students Trained
-            </p>
-          </div>
+          <Link
+            href="/success-stories"
+            className="mt-2 inline-flex items-center gap-2 text-[#0769B4] font-semibold hover:underline"
+          >
+            Read More Testimonials
+            <ArrowRight size={16} />
+          </Link>
+        </div>
 
-          <div className="rounded-2xl bg-slate-50 p-8 text-center">
-            <h3 className="text-4xl font-bold text-[#0769B4]">
-              1000+
-            </h3>
-            <p className="mt-2 text-slate-600">
-              Successful Placements
-            </p>
-          </div>
 
-          <div className="rounded-2xl bg-slate-50 p-8 text-center">
-            <h3 className="text-4xl font-bold text-[#0769B4]">
-              50+
-            </h3>
-            <p className="mt-2 text-slate-600">
-              Hiring Partners
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-slate-50 p-8 text-center">
-            <h3 className="text-4xl font-bold text-[#0769B4]">
-              10+
-            </h3>
-            <p className="mt-2 text-slate-600">
-              Years of Excellence
-            </p>
-          </div>
-
-        </div> */}
 
       </div>
     </section>
