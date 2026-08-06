@@ -1,0 +1,202 @@
+'use client'
+
+import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import {
+  ArrowRight,
+  CheckCircle2,
+} from 'lucide-react'
+
+import Container from '@/components/ui/Container'
+
+/* ────────────────────────────────────────────────
+   Program Data
+──────────────────────────────────────────────── */
+
+type Program = {
+  id: string
+  image: string
+  title: string
+  description: string
+  ctaLabel: string
+  href: string
+}
+
+const programs: Program[] = [
+  {
+    id: 'sap',
+
+    image: '/saperp.png',
+
+    title: 'SAP ERP Courses',
+
+    description:
+      'Master industry-leading SAP ERP modules through instructor-led training, real-time implementation projects, certification guidance and placement support.',
+
+
+    ctaLabel: 'Explore SAP Courses',
+
+    href: '/sap-courses',
+  },
+
+  {
+    id: 'datascience',
+
+    image: '/datascience.png',
+
+    title: 'AI & Data Science',
+
+    description:
+      'Build future-ready skills in Artificial Intelligence, Machine Learning, AI Powered Data Analytics and Azure Data Engineering through practical learning.',
+
+
+
+    ctaLabel: 'Explore AI Courses',
+
+    href: '/ai-data-science',
+  },
+
+  {
+    id: 'workshops',
+
+    image: '/workshops.png',
+
+    title: 'Workshops & Bootcamps',
+
+    description:
+      'Participate in career-focused workshops, bootcamps, hackathons and industry sessions designed to improve practical skills and employability.',
+
+
+    ctaLabel: 'Explore Workshops',
+
+    href: '/workshops&bootcamps',
+  },
+  {
+    id: 'corporate training',
+
+    image: '/corporatetraining.png',
+
+    title: 'Corporate Training',
+
+    description:
+      'Enhance your team\'s skills with our customized corporate training programs, designed to meet your organization\'s unique needs and goals.',
+
+
+    ctaLabel: 'Explore Corporate Training',
+
+    href: '/courses/corporate-training',
+  },
+]
+/* ────────────────────────────────────────────────
+   Program Card
+──────────────────────────────────────────────── */
+
+function ProgramCard({
+  program,
+  index,
+}: {
+  program: Program
+  index: number
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.1,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      whileHover={{ y: -8 }}
+      className="group flex h-full min-h-[480px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0769B4] hover:shadow-xl"
+    >
+      {/* ================= IMAGE ================= */}
+
+      <div className="overflow-hidden border-b border-slate-100">
+
+        <Image
+          src={program.image}
+          alt={program.title}
+          width={600}
+          height={420}
+          priority={index === 0}
+          className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+
+      </div>
+
+      {/* ================= CONTENT ================= */}
+
+      <div className="flex flex-1 flex-col p-5">
+
+        <h3 className="mb-3 text-xl font-bold leading-tight text-slate-900">
+          {program.title}
+        </h3>
+
+        <p className="mb-5 text-[15px] leading-7 text-slate-600">
+          {program.description}
+        </p>
+
+        {/* CTA */}
+
+        <div className="mt-auto">
+
+          <Link
+            href={program.href}
+            className="inline-flex items-center gap-2 font-semibold text-[#0769B4] transition-all duration-300 hover:gap-3"
+          >
+            {program.ctaLabel}
+
+            <ArrowRight size={18} />
+
+          </Link>
+
+        </div>
+
+      </div>
+
+    </motion.div>
+  )
+}
+export default function Courses() {
+  return (
+    <section
+      id="courses"
+      className="bg-white py-16 lg:py-24"
+    >
+      {/* ================= Heading ================= */}
+
+      <div className="mb-6 bg-[#0769B4] px-6 py-8 text-center shadow-xl lg:px-16">
+
+
+
+        <h2 className="mt-3 text-4xl font-extrabold text-white lg:text-5xl">
+          What we offer ?
+        </h2>
+
+
+
+      </div>
+
+      {/* ================= Cards ================= */}
+
+      <Container>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+          {programs.map((program, index) => (
+            <ProgramCard
+              key={program.id}
+              program={program}
+              index={index}
+            />
+          ))}
+
+        </div>
+
+      </Container>
+    </section>
+  )
+}
